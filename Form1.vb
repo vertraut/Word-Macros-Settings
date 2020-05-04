@@ -152,14 +152,14 @@
             GroupBox5.TabStop = False
             Settings_read(0, ComboBox8, 2) ' установка названия шрифта
             Settings_read(1, ComboBox5, 2) ' установка размера шрифта
-            Settings_read(8, TextBox5, 2) 'установка цвета шрифта
-            Settings_read(9, TextBox4, 2) 'установка цвета фона ячейки
             Settings_read(2, Head_RadioButton5, 2) 'установка выравнивания
             Settings_read(3, ComboBox7, 2) ' установка отступов верх/низ
             Settings_read(4, ComboBox6, 2) ' установка отступов лево/право
             Settings_read(5, CheckBox9, 2) 'жирный
             Settings_read(6, CheckBox8, 2) 'курсив
             Settings_read(7, CheckBox7, 2) 'подчеркнутый
+            Settings_read(8, TextBox5, 2) 'установка цвета шрифта
+            Settings_read(9, TextBox4, 2) 'установка цвета фона ячейки
             Settings_read(11, ComboBox9, 2) 'количество строк шапки
             color_set(Button14, TextBox5.Text, 0) ' красим образец цвета текста
             color_set(Button12, TextBox4.Text, 0) ' красим образец цвета фона 
@@ -636,6 +636,7 @@
     Function file_open(file_dir As String) As String
         Dim i As Integer
         Dim s As String
+        Dim s_text As String
         otladka += "- Запрос на чтение файла: " + file_dir + " -"
         Try
 
@@ -653,22 +654,23 @@
 
         Catch ex As Exception ' действия, если не удалось открыть файл настроек
             My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style")
-            s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#1#1#1#1#1"
+            s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#0#1#1#1#1"
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
-            s = "Arial#8#22#0.10#0.10#1#0#0#0,0,0#255,255,255#0#1"
+            s = "Arial#8#22#0.10#0.10#1#0#0#0,0,0#255,255,255#0#1#0#0"
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
 
             s = "255,255,255#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255"
+            s_text = "0,0,0#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255#255,255,255"
 
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\color_text_memory.txt", OpenMode.Output, OpenAccess.Default)
-            Print(i, s)
+            Print(i, s_text)
             FileClose(i)
 
             i = FreeFile()
@@ -678,7 +680,7 @@
 
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\color_head_text_memory.txt", OpenMode.Output, OpenAccess.Default)
-            Print(i, s)
+            Print(i, s_text)
             FileClose(i)
 
             i = FreeFile()
@@ -1624,7 +1626,3 @@
     End Sub
 
 End Class
-
-
-
-
