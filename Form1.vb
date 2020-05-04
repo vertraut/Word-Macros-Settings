@@ -1498,11 +1498,24 @@
 
     Private Sub save_style(sender As Object, e As EventArgs) Handles Style1.Click, Style2.Click, Style3.Click, Style4.Click, Style5.Click, Style6.Click, Style7.Click, Style8.Click
         'Запись настроек в файл стиля
+        Style1.Text = "⚫️"
+        Style2.Text = "⚫️"
+        Style3.Text = "⚫️"
+        Style4.Text = "⚫️"
+        Style5.Text = "⚫️"
+        Style6.Text = "⚫️"
+        Style7.Text = "⚫️"
+        Style8.Text = "⚫️"
+        sender.Text = "▶️"
         debug.Text = sender.name + " Сохранен!"
     End Sub
 
     Private Sub save_name_style(sender As Object, e As EventArgs) Handles Name_style1.TextChanged, Name_style2.TextChanged, Name_style3.TextChanged, Name_style4.TextChanged, Name_style5.TextChanged, Name_style6.TextChanged, Name_style7.TextChanged, Name_style8.TextChanged
         'сохраниение имени стиля при его измнении
+
+        FileOpen(1, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
+        Print(1, Name_style1.Text + Environment.NewLine + Name_style2.Text + Environment.NewLine + Name_style3.Text + Environment.NewLine + Name_style4.Text + Environment.NewLine + Name_style5.Text + Environment.NewLine + Name_style6.Text + Environment.NewLine + Name_style7.Text + Environment.NewLine + Name_style8.Text + Environment.NewLine)
+        FileClose(1)
         debug.Text = sender.name + " " + sender.text
     End Sub
 
