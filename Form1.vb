@@ -652,7 +652,7 @@
             otladka += "- файл " + file_dir + " открыт успешною. в функцию вернулась строка '" + s + "' -"
 
         Catch ex As Exception ' действия, если не удалось открыть файл настроек
-            My.Computer.FileSystem.CreateDirectory("D:\Macros Settings")
+            My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style")
             s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#1#1#1#1#1"
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
@@ -710,7 +710,7 @@
 
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
-            Print(i, "Стиль 1\nСтиль 2")
+            Print(i, "Стиль 1" + Environment.NewLine + "Стиль 2" + Environment.NewLine + "Стиль 3" + Environment.NewLine + "Стиль 4" + Environment.NewLine + "Стиль 5" + Environment.NewLine + "Стиль 6" + Environment.NewLine + "Стиль 7" + Environment.NewLine + "Стиль 8")
             FileClose(i)
 
             s = file_open(file_dir)
