@@ -1,0 +1,12 @@
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\bin\Debug\Macros Settings.exe.config
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\bin\Debug\Macros Settings.exe
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\bin\Debug\Macros Settings.pdb
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\bin\Debug\Macros Settings.xml
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.vbproj.GenerateResource.cache
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.vbproj.CoreCompileInputs.cache
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.exe
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.xml
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.pdb
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros Settings.vbprojAssemblyReference.cache
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros_Settings_vertraut.Form1.resources
+C:\Users\vertraut\source\repos\Macros Settings\Macros Settings\obj\Debug\Macros_Settings_vertraut.Resources.resources
