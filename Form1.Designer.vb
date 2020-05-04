@@ -54,6 +54,7 @@ Partial Class Form1
         Me.color_bg_pipetka_memory_1 = New System.Windows.Forms.Button()
         Me.color_text_pipetka_memory_1 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button66 = New System.Windows.Forms.Button()
         Me.ComboBox10 = New System.Windows.Forms.ComboBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button28 = New System.Windows.Forms.Button()
@@ -315,7 +316,6 @@ Partial Class Form1
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button65 = New System.Windows.Forms.Button()
         Me.Button64 = New System.Windows.Forms.Button()
-        Me.Button66 = New System.Windows.Forms.Button()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -679,10 +679,22 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(595, 656)
+        Me.TabPage1.Size = New System.Drawing.Size(576, 656)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Таблицы"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button66
+        '
+        Me.Button66.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button66.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button66.Location = New System.Drawing.Point(142, 148)
+        Me.Button66.Name = "Button66"
+        Me.Button66.Size = New System.Drawing.Size(99, 23)
+        Me.Button66.TabIndex = 184
+        Me.Button66.TabStop = False
+        Me.Button66.Text = "Память стилей"
+        Me.Button66.UseVisualStyleBackColor = True
         '
         'ComboBox10
         '
@@ -709,7 +721,7 @@ Partial Class Form1
         Me.Panel5.Controls.Add(Me.GroupBox9)
         Me.Panel5.Location = New System.Drawing.Point(3, 430)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(587, 223)
+        Me.Panel5.Size = New System.Drawing.Size(568, 223)
         Me.Panel5.TabIndex = 423
         Me.Panel5.Visible = False
         '
@@ -850,7 +862,7 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.Label26)
         Me.GroupBox4.Location = New System.Drawing.Point(334, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(249, 212)
+        Me.GroupBox4.Size = New System.Drawing.Size(234, 212)
         Me.GroupBox4.TabIndex = 39
         Me.GroupBox4.TabStop = False
         '
@@ -1411,7 +1423,7 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.GroupBox5)
         Me.Panel4.Location = New System.Drawing.Point(3, 212)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(587, 223)
+        Me.Panel4.Size = New System.Drawing.Size(568, 223)
         Me.Panel4.TabIndex = 4
         Me.Panel4.Visible = False
         '
@@ -1598,7 +1610,7 @@ Partial Class Form1
         Me.GroupBox7.Controls.Add(Me.Label15)
         Me.GroupBox7.Location = New System.Drawing.Point(334, 3)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(249, 212)
+        Me.GroupBox7.Size = New System.Drawing.Size(234, 212)
         Me.GroupBox7.TabIndex = 39
         Me.GroupBox7.TabStop = False
         '
@@ -2248,7 +2260,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Location = New System.Drawing.Point(337, 0)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(249, 212)
+        Me.GroupBox3.Size = New System.Drawing.Size(234, 212)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         '
@@ -2940,7 +2952,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(2, -2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(603, 685)
+        Me.TabControl1.Size = New System.Drawing.Size(584, 685)
         Me.TabControl1.TabIndex = 1
         Me.TabControl1.TabStop = False
         '
@@ -3523,7 +3535,7 @@ Partial Class Form1
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(632, 24)
+        Me.TextBox12.Location = New System.Drawing.Point(610, 27)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(100, 22)
         Me.TextBox12.TabIndex = 66
@@ -3533,7 +3545,7 @@ Partial Class Form1
         '
         Me.Button65.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button65.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button65.Location = New System.Drawing.Point(607, 23)
+        Me.Button65.Location = New System.Drawing.Point(585, 26)
         Me.Button65.Name = "Button65"
         Me.Button65.Size = New System.Drawing.Size(23, 23)
         Me.Button65.TabIndex = 182
@@ -3545,25 +3557,13 @@ Partial Class Form1
         '
         Me.Button64.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button64.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button64.Location = New System.Drawing.Point(737, 24)
+        Me.Button64.Location = New System.Drawing.Point(715, 27)
         Me.Button64.Name = "Button64"
         Me.Button64.Size = New System.Drawing.Size(23, 23)
         Me.Button64.TabIndex = 183
         Me.Button64.TabStop = False
         Me.Button64.Text = "▶️"
         Me.Button64.UseVisualStyleBackColor = True
-        '
-        'Button66
-        '
-        Me.Button66.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button66.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button66.Location = New System.Drawing.Point(142, 148)
-        Me.Button66.Name = "Button66"
-        Me.Button66.Size = New System.Drawing.Size(99, 23)
-        Me.Button66.TabIndex = 184
-        Me.Button66.TabStop = False
-        Me.Button66.Text = "Память стилей"
-        Me.Button66.UseVisualStyleBackColor = True
         '
         'Form1
         '

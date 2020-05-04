@@ -26,7 +26,7 @@
         ComboBox11.DisplayMember = "Name"
         ComboBox15.DataSource = fonts_name.Families
         ComboBox15.DisplayMember = "Name"
-        windows_width = 623 ' задаем ширину окна по умолчанию
+        windows_width = 602 ' задаем ширину окна по умолчанию
 
 
         start_program()
@@ -1479,6 +1479,10 @@
         apply_changes(4)
     End Sub
 
+    Private Sub Button66_Click(sender As Object, e As EventArgs) Handles Button66.Click 'кнопка память стилей
+        windows_width = 755 ' ширина окна со списком стилей
+        Me.Width = windows_width 'устанавливаем ширину окна
+    End Sub
 
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown, TextBox5.KeyDown, TextBox3.KeyDown, TextBox4.KeyDown
 
