@@ -312,6 +312,10 @@ Partial Class Form1
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Button65 = New System.Windows.Forms.Button()
+        Me.Button64 = New System.Windows.Forms.Button()
+        Me.Button66 = New System.Windows.Forms.Button()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -638,7 +642,7 @@ Partial Class Form1
         'color_bg_pipetka_memory_1
         '
         Me.color_bg_pipetka_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_1.Location = New System.Drawing.Point(611, 187)
+        Me.color_bg_pipetka_memory_1.Location = New System.Drawing.Point(1035, 185)
         Me.color_bg_pipetka_memory_1.Name = "color_bg_pipetka_memory_1"
         Me.color_bg_pipetka_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_1.TabIndex = 64
@@ -649,7 +653,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_1.Location = New System.Drawing.Point(611, 106)
+        Me.color_text_pipetka_memory_1.Location = New System.Drawing.Point(1035, 104)
         Me.color_text_pipetka_memory_1.Name = "color_text_pipetka_memory_1"
         Me.color_text_pipetka_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_1.TabIndex = 57
@@ -658,6 +662,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button66)
         Me.TabPage1.Controls.Add(Me.ComboBox10)
         Me.TabPage1.Controls.Add(Me.Panel5)
         Me.TabPage1.Controls.Add(Me.Button26)
@@ -2775,7 +2780,7 @@ Partial Class Form1
         'Button46
         '
         Me.Button46.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button46.Location = New System.Drawing.Point(611, 573)
+        Me.Button46.Location = New System.Drawing.Point(1035, 571)
         Me.Button46.Name = "Button46"
         Me.Button46.Size = New System.Drawing.Size(20, 20)
         Me.Button46.TabIndex = 64
@@ -2785,7 +2790,7 @@ Partial Class Form1
         'Button54
         '
         Me.Button54.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button54.Location = New System.Drawing.Point(611, 513)
+        Me.Button54.Location = New System.Drawing.Point(1035, 511)
         Me.Button54.Name = "Button54"
         Me.Button54.Size = New System.Drawing.Size(20, 20)
         Me.Button54.TabIndex = 33
@@ -2795,7 +2800,7 @@ Partial Class Form1
         'color_head_fill_memory_1
         '
         Me.color_head_fill_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_head_fill_memory_1.Location = New System.Drawing.Point(607, 370)
+        Me.color_head_fill_memory_1.Location = New System.Drawing.Point(1031, 368)
         Me.color_head_fill_memory_1.Name = "color_head_fill_memory_1"
         Me.color_head_fill_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_head_fill_memory_1.TabIndex = 64
@@ -2805,7 +2810,7 @@ Partial Class Form1
         'color_head_text_memory_1
         '
         Me.color_head_text_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_head_text_memory_1.Location = New System.Drawing.Point(607, 295)
+        Me.color_head_text_memory_1.Location = New System.Drawing.Point(1031, 293)
         Me.color_head_text_memory_1.Name = "color_head_text_memory_1"
         Me.color_head_text_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_head_text_memory_1.TabIndex = 33
@@ -2815,7 +2820,7 @@ Partial Class Form1
         'color_fill_memory_1
         '
         Me.color_fill_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_fill_memory_1.Location = New System.Drawing.Point(611, 150)
+        Me.color_fill_memory_1.Location = New System.Drawing.Point(1035, 148)
         Me.color_fill_memory_1.Name = "color_fill_memory_1"
         Me.color_fill_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_fill_memory_1.TabIndex = 64
@@ -2825,7 +2830,7 @@ Partial Class Form1
         'color_text_memory_1
         '
         Me.color_text_memory_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_memory_1.Location = New System.Drawing.Point(611, 80)
+        Me.color_text_memory_1.Location = New System.Drawing.Point(1035, 78)
         Me.color_text_memory_1.Name = "color_text_memory_1"
         Me.color_text_memory_1.Size = New System.Drawing.Size(20, 20)
         Me.color_text_memory_1.TabIndex = 33
@@ -2835,7 +2840,7 @@ Partial Class Form1
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(731, 210)
+        Me.CheckBox10.Location = New System.Drawing.Point(1155, 208)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(190, 20)
         Me.CheckBox10.TabIndex = 3
@@ -2848,7 +2853,7 @@ Partial Class Form1
         Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label19.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(667, 120)
+        Me.Label19.Location = New System.Drawing.Point(1091, 118)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(325, 28)
         Me.Label19.TabIndex = 34
@@ -2862,7 +2867,7 @@ Partial Class Form1
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(658, 473)
+        Me.Button3.Location = New System.Drawing.Point(1082, 471)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(110, 35)
         Me.Button3.TabIndex = 5
@@ -2876,7 +2881,7 @@ Partial Class Form1
         Me.Label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label31.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Label31.Location = New System.Drawing.Point(667, 168)
+        Me.Label31.Location = New System.Drawing.Point(1091, 166)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(325, 28)
         Me.Label31.TabIndex = 34
@@ -2890,7 +2895,7 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Location = New System.Drawing.Point(667, 236)
+        Me.Panel3.Location = New System.Drawing.Point(1091, 234)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(249, 207)
         Me.Panel3.TabIndex = 4
@@ -3485,7 +3490,7 @@ Partial Class Form1
         'tb_f_1
         '
         Me.tb_f_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.tb_f_1.Location = New System.Drawing.Point(637, 150)
+        Me.tb_f_1.Location = New System.Drawing.Point(1061, 148)
         Me.tb_f_1.Name = "tb_f_1"
         Me.tb_f_1.Size = New System.Drawing.Size(20, 20)
         Me.tb_f_1.TabIndex = 64
@@ -3495,7 +3500,7 @@ Partial Class Form1
         'tb_t_1
         '
         Me.tb_t_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.tb_t_1.Location = New System.Drawing.Point(637, 81)
+        Me.tb_t_1.Location = New System.Drawing.Point(1061, 79)
         Me.tb_t_1.Name = "tb_t_1"
         Me.tb_t_1.Size = New System.Drawing.Size(20, 20)
         Me.tb_t_1.TabIndex = 33
@@ -3516,12 +3521,59 @@ Partial Class Form1
         '
         Me.Timer2.Interval = 150
         '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(632, 24)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox12.TabIndex = 66
+        Me.TextBox12.Text = "формула"
+        '
+        'Button65
+        '
+        Me.Button65.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button65.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button65.Location = New System.Drawing.Point(607, 23)
+        Me.Button65.Name = "Button65"
+        Me.Button65.Size = New System.Drawing.Size(23, 23)
+        Me.Button65.TabIndex = 182
+        Me.Button65.TabStop = False
+        Me.Button65.Text = "▶️"
+        Me.Button65.UseVisualStyleBackColor = True
+        '
+        'Button64
+        '
+        Me.Button64.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button64.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button64.Location = New System.Drawing.Point(737, 24)
+        Me.Button64.Name = "Button64"
+        Me.Button64.Size = New System.Drawing.Size(23, 23)
+        Me.Button64.TabIndex = 183
+        Me.Button64.TabStop = False
+        Me.Button64.Text = "▶️"
+        Me.Button64.UseVisualStyleBackColor = True
+        '
+        'Button66
+        '
+        Me.Button66.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button66.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button66.Location = New System.Drawing.Point(142, 148)
+        Me.Button66.Name = "Button66"
+        Me.Button66.Size = New System.Drawing.Size(99, 23)
+        Me.Button66.TabIndex = 184
+        Me.Button66.TabStop = False
+        Me.Button66.Text = "Память стилей"
+        Me.Button66.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(1158, 684)
+        Me.ClientSize = New System.Drawing.Size(1462, 684)
+        Me.Controls.Add(Me.Button64)
+        Me.Controls.Add(Me.Button65)
+        Me.Controls.Add(Me.TextBox12)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Panel3)
@@ -3881,4 +3933,8 @@ Partial Class Form1
     Friend WithEvents Textbox_RadioButton2 As RadioButton
     Friend WithEvents Textbox_RadioButton4 As RadioButton
     Friend WithEvents Textbox_RadioButton1 As RadioButton
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents Button65 As Button
+    Friend WithEvents Button66 As Button
+    Friend WithEvents Button64 As Button
 End Class

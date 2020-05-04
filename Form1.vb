@@ -1494,6 +1494,14 @@
         apply_changes(4)
     End Sub
 
+    Private Sub Button64_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click
+
+    End Sub
+
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown, TextBox5.KeyDown, TextBox3.KeyDown, TextBox4.KeyDown
 
         Dim goal_textbox As TextBox
