@@ -3570,7 +3570,6 @@ Partial Class Form1
         Me.Name_style1.Name = "Name_style1"
         Me.Name_style1.Size = New System.Drawing.Size(100, 22)
         Me.Name_style1.TabIndex = 66
-        Me.Name_style1.Text = "Стиль 1"
         '
         'Style1
         '
@@ -3626,7 +3625,6 @@ Partial Class Form1
         Me.Name_style2.Name = "Name_style2"
         Me.Name_style2.Size = New System.Drawing.Size(100, 22)
         Me.Name_style2.TabIndex = 184
-        Me.Name_style2.Text = "Стиль 2"
         '
         'Style_save3
         '
@@ -3658,7 +3656,6 @@ Partial Class Form1
         Me.Name_style3.Name = "Name_style3"
         Me.Name_style3.Size = New System.Drawing.Size(100, 22)
         Me.Name_style3.TabIndex = 188
-        Me.Name_style3.Text = "Стиль 3"
         '
         'Style_save4
         '
@@ -3690,7 +3687,6 @@ Partial Class Form1
         Me.Name_style4.Name = "Name_style4"
         Me.Name_style4.Size = New System.Drawing.Size(100, 22)
         Me.Name_style4.TabIndex = 191
-        Me.Name_style4.Text = "Стиль 4"
         '
         'Style_save5
         '
@@ -3722,7 +3718,6 @@ Partial Class Form1
         Me.Name_style5.Name = "Name_style5"
         Me.Name_style5.Size = New System.Drawing.Size(100, 22)
         Me.Name_style5.TabIndex = 194
-        Me.Name_style5.Text = "Стиль 5"
         '
         'Style_save6
         '
@@ -3754,7 +3749,6 @@ Partial Class Form1
         Me.Name_style6.Name = "Name_style6"
         Me.Name_style6.Size = New System.Drawing.Size(100, 22)
         Me.Name_style6.TabIndex = 197
-        Me.Name_style6.Text = "Стиль 6"
         '
         'Style_save7
         '
@@ -3786,7 +3780,6 @@ Partial Class Form1
         Me.Name_style7.Name = "Name_style7"
         Me.Name_style7.Size = New System.Drawing.Size(100, 22)
         Me.Name_style7.TabIndex = 200
-        Me.Name_style7.Text = "Стиль 7"
         '
         'Style_save8
         '
@@ -3818,7 +3811,6 @@ Partial Class Form1
         Me.Name_style8.Name = "Name_style8"
         Me.Name_style8.Size = New System.Drawing.Size(100, 22)
         Me.Name_style8.TabIndex = 203
-        Me.Name_style8.Text = "Стиль 8"
         '
         'Form1
         '

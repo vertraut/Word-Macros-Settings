@@ -1476,6 +1476,8 @@
             num = num + 1
         End While
 
+        FileClose(1)
+
         ' Устанавливаем имена стилей
         Name_style1.Text = name_styles(0)
         Name_style2.Text = name_styles(1)
@@ -1485,7 +1487,6 @@
         Name_style6.Text = name_styles(5)
         Name_style7.Text = name_styles(6)
         Name_style8.Text = name_styles(7)
-        FileClose(1)
 
         'изменяем ширину окна
         If windows_width < 650 Then
