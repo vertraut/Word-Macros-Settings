@@ -15,6 +15,7 @@
     Public set_setting_textbox_complete As Boolean = False
     Public Window_view_memory As Integer ' служит для запоминания состояния вкладки "Таблица"
     Public windows_width As Integer ' ширина рабочего окна
+    Dim setting_main, settings_head As String 'переменные для хранения строки настроек (как они хранятся в файле)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -351,10 +352,11 @@
 
         If goal = 1 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + head_status + "#" + "доп.формат" + "#" + CStr(ComboBox10.SelectedIndex) + "#" + set_color_text_status + "#" + set_color_fill_status
+            setting_main = s
 
         ElseIf goal = 2 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + ComboBox9.Text + "#" + set_color_text_status + "#" + set_color_fill_status
-
+            settings_head = s
 
         ElseIf goal = 4 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text
@@ -654,12 +656,14 @@
 
         Catch ex As Exception ' действия, если не удалось открыть файл настроек
             My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style")
-            s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#0#1#1#1#1"
+            s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#0#доп.формат#1#1#1"
+            setting_main = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
             s = "Arial#8#22#0.10#0.10#1#0#0#0,0,0#255,255,255#0#1#0#0"
+            settings_head = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
@@ -713,6 +717,17 @@
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, "Стиль 1" + Environment.NewLine + "Стиль 2" + Environment.NewLine + "Стиль 3" + Environment.NewLine + "Стиль 4" + Environment.NewLine + "Стиль 5" + Environment.NewLine + "Стиль 6" + Environment.NewLine + "Стиль 7" + Environment.NewLine + "Стиль 8")
+            FileClose(i)
+
+            i = FreeFile()
+            FileOpen(i, "D:\Macros Settings\style\styles.txt", OpenMode.Output, OpenAccess.Default)
+            For y = 0 To 7
+                If y < 7 Then
+                    Print(i, setting_main + "@" + settings_head + Environment.NewLine)
+                Else Print(i, setting_main + "@" + settings_head)
+                End If
+            Next
+
             FileClose(i)
 
             s = file_open(file_dir)
@@ -1463,7 +1478,6 @@
 
     Private Sub Button66_Click(sender As Object, e As EventArgs) Handles Button66.Click 'кнопка память стилей
         'читаем название стилей из файла
-
         Dim name_styles(8) As String
         Dim num As Integer
         num = 0
@@ -1508,6 +1522,57 @@
         Style7.Text = "⚫️"
         Style8.Text = "⚫️"
         sender.Text = "▶️"
+
+        'Считываем массив всех настроек
+        Dim styles(8) As String
+        Dim num As Integer
+        num = 0
+        ' Open file.
+        FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Input, OpenAccess.Default)
+        ' Читаем файл до конца
+        While Not EOF(1)
+            ' Read line into variable.
+            styles(num) = LineInput(1)
+            num = num + 1
+        End While
+        FileClose(1)
+
+        'формируем новую строку настроек
+        Dim s As String
+        s = setting_main + "@" + settings_head
+
+        'Замняем нужный элемент на новый (настройки таблицы + разделитель + настройки шапки)
+        Select Case sender.name
+            Case "Style1"
+                styles(0) = s
+            Case "Style2"
+                styles(1) = s
+            Case "Style3"
+                styles(2) = s
+            Case "Style4"
+                styles(3) = s
+            Case "Style5"
+                styles(4) = s
+            Case "Style6"
+                styles(5) = s
+            Case "Style7"
+                styles(6) = s
+            Case Else
+                styles(7) = s
+        End Select
+
+        'Сохраняем обновленные файл настроек
+        FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Output, OpenAccess.Default)
+        For y = 0 To 7
+            If y < 7 Then
+                Print(1, styles(y) + Environment.NewLine)
+            Else Print(1, styles(y))
+            End If
+        Next
+
+        FileClose(1)
+
+
         debug.Text = sender.name + " Сохранен!"
     End Sub
 
@@ -1515,7 +1580,7 @@
         'сохраниение имени стиля при его измнении
 
         FileOpen(1, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
-        Print(1, Name_style1.Text + Environment.NewLine + Name_style2.Text + Environment.NewLine + Name_style3.Text + Environment.NewLine + Name_style4.Text + Environment.NewLine + Name_style5.Text + Environment.NewLine + Name_style6.Text + Environment.NewLine + Name_style7.Text + Environment.NewLine + Name_style8.Text + Environment.NewLine)
+        Print(1, Name_style1.Text + Environment.NewLine + Name_style2.Text + Environment.NewLine + Name_style3.Text + Environment.NewLine + Name_style4.Text + Environment.NewLine + Name_style5.Text + Environment.NewLine + Name_style6.Text + Environment.NewLine + Name_style7.Text + Environment.NewLine + Name_style8.Text)
         FileClose(1)
         debug.Text = sender.name + " " + sender.text
     End Sub
