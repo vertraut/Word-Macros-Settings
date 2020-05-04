@@ -35,9 +35,6 @@
 
     Public Sub start_program()
 
-
-
-
         mem_color_text = New Button(7) {Me.color_text_memory_1, Me.color_text_memory_2, Me.color_text_memory_3, Me.color_text_memory_4, Me.color_text_memory_5, Me.color_text_memory_6, Me.color_text_memory_7, Me.color_text_memory_8}
         mem_color_fill = New Button(7) {Me.color_fill_memory_1, Me.color_fill_memory_2, Me.color_fill_memory_3, Me.color_fill_memory_4, Me.color_fill_memory_5, Me.color_fill_memory_6, Me.color_fill_memory_7, Me.color_fill_memory_8}
         mem_color_head_text = New Button(7) {Me.color_head_text_memory_1, Me.color_head_text_memory_2, Me.color_head_text_memory_3, Me.color_head_text_memory_4, Me.color_head_text_memory_5, Me.color_head_text_memory_6, Me.color_head_text_memory_7, Me.color_head_text_memory_8}
@@ -46,7 +43,6 @@
         mem_color_bg_pipetka = New Button(7) {Me.color_bg_pipetka_memory_1, Me.color_bg_pipetka_memory_2, Me.color_bg_pipetka_memory_3, Me.color_bg_pipetka_memory_4, Me.color_bg_pipetka_memory_5, Me.color_bg_pipetka_memory_6, Me.color_bg_pipetka_memory_7, Me.color_bg_pipetka_memory_8}
         mem_color_text_textbox = New Button(7) {Me.tb_t_1, Me.tb_t_2, Me.tb_t_3, Me.tb_t_4, Me.tb_t_5, Me.tb_t_6, Me.tb_t_7, Me.tb_t_8}
         mem_color_fill_textbox = New Button(7) {Me.tb_f_1, Me.tb_f_2, Me.tb_f_3, Me.tb_f_4, Me.tb_f_5, Me.tb_f_6, Me.tb_f_7, Me.tb_f_8}
-
 
         radiobtn_align = New RadioButton(2, 2) {{Me.RadioButton1, Me.RadioButton2, Me.RadioButton3}, {Me.RadioButton4, Me.RadioButton5, Me.RadioButton6}, {Me.RadioButton7, Me.RadioButton8, Me.RadioButton9}}
         head_radiobtn_align = New RadioButton(2, 2) {{Me.Head_RadioButton1, Me.Head_RadioButton2, Me.Head_RadioButton3}, {Me.Head_RadioButton4, Me.Head_RadioButton5, Me.Head_RadioButton6}, {Me.Head_RadioButton7, Me.Head_RadioButton8, Me.Head_RadioButton9}}
@@ -248,10 +244,6 @@
 
     End Sub
 
-
-
-
-
     Private Sub Settings_save(goal As Integer)
         Dim dir As String 'путь к файлу который нужно сохранить
         Dim radiobtn_array(3, 3) As RadioButton 'массив в который запишется массив радиокнопок выравнивания текста
@@ -280,8 +272,6 @@
             add_head = CheckBox4
             set_color_text = CheckBox15
             set_color_fill = CheckBox16
-
-
 
 
             If add_head.Checked Then
@@ -317,8 +307,6 @@
             size = ComboBox16
             color_text = TextBox11
             color_fill = TextBox10
-
-
 
         End If
         FileOpen(1, dir, OpenMode.Output)
@@ -361,29 +349,20 @@
             End If
         End If
 
-
-
-
-
         If goal = 1 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + head_status + "#" + "доп.формат" + "#" + CStr(ComboBox10.SelectedIndex) + "#" + set_color_text_status + "#" + set_color_fill_status
-
 
         ElseIf goal = 2 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + ComboBox9.Text + "#" + set_color_text_status + "#" + set_color_fill_status
 
 
-
         ElseIf goal = 4 Then
-        s = font.Text + "#" + size.Text + "#" + text_align + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text
+            s = font.Text + "#" + size.Text + "#" + text_align + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text
         End If
-
 
         Print(1, s)
         FileClose(1)
-
         Timer2.Enabled = True
-
 
     End Sub
 
@@ -729,7 +708,10 @@
             Print(i, s)
             FileClose(i)
 
-
+            i = FreeFile()
+            FileOpen(i, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
+            Print(i, "Стиль 1\nСтиль 2")
+            FileClose(i)
 
             s = file_open(file_dir)
             file_open = s
@@ -842,9 +824,9 @@
             colors_mem_button = mem_color_bg_pipetka 'копируем массив цветов фона таблицы
         ElseIf goal = 9 Then 'пипетка цвет текста
             colors_mem_button = mem_color_text_textbox
-        'копируем массив цветов текста таблицы
+            'копируем массив цветов текста таблицы
         ElseIf goal = 10 Then 'пипетка цвет заливки
-        colors_mem_button = mem_color_fill_textbox 'копируем массив цветов фона таблицы
+            colors_mem_button = mem_color_fill_textbox 'копируем массив цветов фона таблицы
         End If
 
         For indexA = 0 To 7
@@ -1056,7 +1038,6 @@
         End If
         Try
 
-
             R = CInt(code.Split(",")(0).ToString())
             G = CInt(code.Split(",")(1).ToString())
             B = CInt(code.Split(",")(2).ToString())
@@ -1069,7 +1050,6 @@
             text_code.Text = "Ошибка!"
         End Try
     End Function
-
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, Button15.Click, Button8.Click, Button13.Click, Button63.Click, Button31.Click, Button85.Click, Button83.Click
 
@@ -1480,6 +1460,32 @@
     End Sub
 
     Private Sub Button66_Click(sender As Object, e As EventArgs) Handles Button66.Click 'кнопка память стилей
+        'читаем название стилей из файла
+
+        Dim name_styles(8) As String
+        Dim num As Integer
+        num = 0
+        ' Open file.
+        FileOpen(1, "D:\Macros Settings\style\style_name.txt", OpenMode.Input, OpenAccess.Default)
+        ' Читаем файл до конца
+        While Not EOF(1)
+            ' Read line into variable.
+            name_styles(num) = LineInput(1)
+            num = num + 1
+        End While
+
+        ' Устанавливаем имена стилей
+        Name_style1.Text = name_styles(0)
+        Name_style2.Text = name_styles(1)
+        Name_style3.Text = name_styles(2)
+        Name_style4.Text = name_styles(3)
+        Name_style5.Text = name_styles(4)
+        Name_style6.Text = name_styles(5)
+        Name_style7.Text = name_styles(6)
+        Name_style8.Text = name_styles(7)
+        FileClose(1)
+
+        'изменяем ширину окна
         If windows_width < 650 Then
             windows_width = 755 ' ширина окна со списком стилей
         Else
@@ -1487,6 +1493,18 @@
         End If
         Me.Width = windows_width 'устанавливаем ширину окна
     End Sub
+
+    Private Sub save_style(sender As Object, e As EventArgs) Handles Style1.Click, Style2.Click, Style3.Click, Style4.Click, Style5.Click, Style6.Click, Style7.Click, Style8.Click
+        'Запись настроек в файл стиля
+        debug.Text = sender.name + " Сохранен!"
+    End Sub
+
+    Private Sub save_name_style(sender As Object, e As EventArgs) Handles Name_style1.TextChanged, Name_style2.TextChanged, Name_style3.TextChanged, Name_style4.TextChanged, Name_style5.TextChanged, Name_style6.TextChanged, Name_style7.TextChanged, Name_style8.TextChanged
+        'сохраниение имени стиля при его измнении
+        debug.Text = sender.name + " " + sender.text
+    End Sub
+
+
 
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown, TextBox5.KeyDown, TextBox3.KeyDown, TextBox4.KeyDown
 
@@ -1585,15 +1603,6 @@
         Me.Width = width
     End Sub
 
-    'Private Sub Button_color_Press_down(sender As Object, e As MouseEventArgs) Handles Button6.MouseDown, Button4.MouseDown, Button34.MouseDown, Button33.MouseDown, Button82.MouseDown, Button81.MouseDown, Button103.MouseDown, Button102.MouseDown
-
-    'End Sub
-
-    'Private Sub Button_color_Press_up(sender As Object, e As MouseEventArgs) Handles Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button82.MouseUp, Button81.MouseUp, Button103.MouseUp, Button102.MouseUp
-
-    'End Sub
-
-
     Private Sub ComboBox17_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -1615,7 +1624,6 @@
     End Sub
 
 End Class
-
 
 
 
