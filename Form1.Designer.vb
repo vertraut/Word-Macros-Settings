@@ -3527,7 +3527,7 @@ Partial Class Form1
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(100, 22)
         Me.TextBox12.TabIndex = 66
-        Me.TextBox12.Text = "формула"
+        Me.TextBox12.Text = "Стиль 1"
         '
         'Button65
         '

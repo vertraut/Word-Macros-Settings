@@ -14,6 +14,7 @@
     Public set_setting_head_complete As Boolean = False
     Public set_setting_textbox_complete As Boolean = False
     Public Window_view_memory As Integer ' служит для запоминания состояния вкладки "Таблица"
+    Public windows_width As Integer ' ширина рабочего окна
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -25,6 +26,7 @@
         ComboBox11.DisplayMember = "Name"
         ComboBox15.DataSource = fonts_name.Families
         ComboBox15.DisplayMember = "Name"
+        windows_width = 623 ' задаем ширину окна по умолчанию
 
 
         start_program()
@@ -850,7 +852,6 @@
         Next indexA
 
     End Sub
-
     Function color_memory_read(color_for As Integer) As String() 'считываем сохраненные цвета из файлов (1 - для текста, 2- для фона)
         'если 1, то читаем для текста, если 2, то читаем для фона
         Dim colors As String
@@ -873,10 +874,10 @@
             colors = file_open("D:\Macros Settings\pipetka_bg_memory.txt")
 
         ElseIf color_for = 9 Then
-        colors = file_open("D:\Macros Settings\textbox_text_memory.txt")
+            colors = file_open("D:\Macros Settings\textbox_text_memory.txt")
 
         ElseIf color_for = 10 Then
-        colors = file_open("D:\Macros Settings\textbox_fill_memory.txt")
+            colors = file_open("D:\Macros Settings\textbox_fill_memory.txt")
         End If
 
         For indexA = 0 To 7
@@ -886,8 +887,6 @@
         color_memory_read = colors_array
 
     End Function
-
-
 
 
     Private Sub choose_from_memory(goal As Integer, color As Color) 'действия при нажатии на цвета в памяти
@@ -1024,9 +1023,7 @@
         Next i
         Print(file_num, s)
         FileClose(file_num)
-
     End Sub
-
 
     Function control_imput_color_rgb(goal As Integer) As Boolean ' Функция проверки правильности ввода в текстовое поле кода цвета
         Dim code As String = ""
@@ -1072,9 +1069,6 @@
             text_code.Text = "Ошибка!"
         End Try
     End Function
-
-
-
 
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, Button15.Click, Button8.Click, Button13.Click, Button63.Click, Button31.Click, Button85.Click, Button83.Click
@@ -1130,7 +1124,6 @@
         End If
 
     End Sub
-
 
 
     'нажатие на цвет текста для всей таблицы из памяти
@@ -1231,8 +1224,6 @@
 
     End Sub
 
-
-
     Private Sub set_color_getpixel()
         Dim color_textbox As TextBox
         Dim button_color As Button
@@ -1284,7 +1275,6 @@
             num_changes = 10
         End If
 
-
         color_textbox.Text = color_pixcolor
         If control_imput_color_rgb(num_changes) Then
             color_set(button_color, color_textbox.Text, 0)
@@ -1293,7 +1283,6 @@
         End If
 
     End Sub
-
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
 
@@ -1343,9 +1332,6 @@
     Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged, CheckBox8.CheckedChanged, CheckBox7.CheckedChanged
         apply_changes(2)
     End Sub
-
-
-
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged, CheckBox2.CheckedChanged, CheckBox1.CheckedChanged
         apply_changes(1)
@@ -1476,7 +1462,6 @@
         End If
     End Sub
 
-
     Private Sub Head_RadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles Head_RadioButton1.CheckedChanged, Head_RadioButton2.CheckedChanged, Head_RadioButton3.CheckedChanged, Head_RadioButton4.CheckedChanged, Head_RadioButton5.CheckedChanged, Head_RadioButton6.CheckedChanged, Head_RadioButton7.CheckedChanged, Head_RadioButton8.CheckedChanged, Head_RadioButton9.CheckedChanged
         sender.Tabstop = False
         apply_changes(2)
@@ -1494,13 +1479,6 @@
         apply_changes(4)
     End Sub
 
-    Private Sub Button64_Click(sender As Object, e As EventArgs) 
-
-    End Sub
-
-    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click
-
-    End Sub
 
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown, TextBox5.KeyDown, TextBox3.KeyDown, TextBox4.KeyDown
 
@@ -1550,7 +1528,7 @@
     Private Sub Window_view(view_id As Int16) 'Функция показывающая или скрывающая доп. опции для таблиц
         Window_view_memory = view_id
         If view_id = 1 Then 'Показывать только настройки для таблицы
-            set_window_size(279) ' устанавливает размер всего окна программы
+            set_window_size(279, windows_width) ' устанавливает размер всего окна программы
             set_controlTab_size(240) 'устанавливает размер окна с вкладками
             set_saveBtn_position(10, 195) 'устанавливает положение кнопки "сохранить"
             Label19.Visible = False
@@ -1558,7 +1536,7 @@
             Panel4.Visible = False
             Panel5.Visible = False
         ElseIf view_id = 2 Then 'Показывать настройки для таблицы и шапки таблицы
-            set_window_size(507) ' устанавливает размер всего окна программы
+            set_window_size(507, windows_width) ' устанавливает размер всего окна программы
             set_controlTab_size(468) 'устанавливает размер окна с вкладками
             set_label_head_position(10, 205) 'устанавливает надпись "формат. шапки"
             set_saveBtn_position(10, 420) 'устанавливает положение кнопки "сохранить" 
@@ -1567,7 +1545,7 @@
             Panel4.Visible = True
             Panel5.Visible = False
         ElseIf view_id = 3 Then 'Показывать настройки для таблицы и отдельных ячеек
-            set_window_size(507) ' устанавливает размер всего окна программы
+            set_window_size(507, windows_width) ' устанавливает размер всего окна программы
             set_controlTab_size(468) 'устанавливает размер окна с вкладками
             set_label_cells_position(10, 205) 'устанавливает надпись "формат. шапки"
             set_saveBtn_position(10, 390) 'устанавливает положение кнопки "сохранить"
@@ -1578,7 +1556,7 @@
             Panel5.Location = New Point(3, 212)
         ElseIf view_id = 4 Then 'Показывать настройки для таблицы, шапки таблицы и окно для отдельных ячеек
 
-            set_window_size(715) ' устанавливает размер всего окна программы
+            set_window_size(715, windows_width) ' устанавливает размер всего окна программы
             set_controlTab_size(675) 'устанавливает размер окна с вкладками
             set_label_head_position(10, 205) 'устанавливает надпись "формат. шапки"
             set_label_cells_position(10, 421) 'устанавливает надпись "формат. ячеек"
@@ -1594,9 +1572,9 @@
 
 
 
-    Private Sub set_window_size(heigt)
+    Private Sub set_window_size(heigt, width)
         Me.Height = heigt
-        Me.Width = 623
+        Me.Width = width
     End Sub
 
     'Private Sub Button_color_Press_down(sender As Object, e As MouseEventArgs) Handles Button6.MouseDown, Button4.MouseDown, Button34.MouseDown, Button33.MouseDown, Button82.MouseDown, Button81.MouseDown, Button103.MouseDown, Button102.MouseDown
