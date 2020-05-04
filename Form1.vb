@@ -1480,7 +1480,11 @@
     End Sub
 
     Private Sub Button66_Click(sender As Object, e As EventArgs) Handles Button66.Click 'кнопка память стилей
-        windows_width = 755 ' ширина окна со списком стилей
+        If windows_width < 650 Then
+            windows_width = 755 ' ширина окна со списком стилей
+        Else
+            windows_width = 602 ' ширина окна без списка стилей
+        End If
         Me.Width = windows_width 'устанавливаем ширину окна
     End Sub
 

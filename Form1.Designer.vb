@@ -693,7 +693,7 @@ Partial Class Form1
         Me.Button66.Size = New System.Drawing.Size(99, 23)
         Me.Button66.TabIndex = 184
         Me.Button66.TabStop = False
-        Me.Button66.Text = "Память стилей"
+        Me.Button66.Text = "Стили"
         Me.Button66.UseVisualStyleBackColor = True
         '
         'ComboBox10
@@ -3535,7 +3535,7 @@ Partial Class Form1
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(610, 27)
+        Me.TextBox12.Location = New System.Drawing.Point(609, 27)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(100, 22)
         Me.TextBox12.TabIndex = 66
@@ -3545,9 +3545,9 @@ Partial Class Form1
         '
         Me.Button65.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button65.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button65.Location = New System.Drawing.Point(585, 26)
+        Me.Button65.Location = New System.Drawing.Point(586, 26)
         Me.Button65.Name = "Button65"
-        Me.Button65.Size = New System.Drawing.Size(23, 23)
+        Me.Button65.Size = New System.Drawing.Size(23, 24)
         Me.Button65.TabIndex = 182
         Me.Button65.TabStop = False
         Me.Button65.Text = "▶️"
@@ -3557,9 +3557,9 @@ Partial Class Form1
         '
         Me.Button64.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button64.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button64.Location = New System.Drawing.Point(715, 27)
+        Me.Button64.Location = New System.Drawing.Point(709, 26)
         Me.Button64.Name = "Button64"
-        Me.Button64.Size = New System.Drawing.Size(23, 23)
+        Me.Button64.Size = New System.Drawing.Size(23, 24)
         Me.Button64.TabIndex = 183
         Me.Button64.TabStop = False
         Me.Button64.Text = "▶️"
