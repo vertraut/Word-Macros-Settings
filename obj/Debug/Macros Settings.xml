@@ -37,5 +37,10 @@ Macros Settings
   Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Macros_Settings_vertraut.My.Resources.Resources.topmost_btn">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

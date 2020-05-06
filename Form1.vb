@@ -92,8 +92,6 @@
             Me.TopMost = False
             Button3.Visible = True
             Button3.Location = New Point(10, 170)
-
-
             Settings_textbox_read(0, ComboBox15) ' установка названия шрифта
             Settings_textbox_read(1, ComboBox16) ' установка размера шрифта
             Settings_textbox_read(2, Textbox_RadioButton5) 'установка выравнивания
@@ -106,9 +104,20 @@
             color_set(Button80, TextBox10.Text, 0) ' красим образец цвета текста 
             color_memory_set(9) 'заносим цвета из памяти на панель для текста
             color_memory_set(10) 'заносим цвета из памяти на панель для фона
-
             set_setting_textbox_complete = True
+        End If
 
+        If TabControl1.SelectedIndex = 3 Then 'Если выбрана вкладка "стили"
+            Me.TopMost = True
+            style_load()
+            Panel7.Location = New Point(-20, 3)
+            TabControl1.Visible = False
+            Button3.Visible = False
+            Panel8.Visible = False
+            Button64.Visible = True
+            Me.Height = 280
+            Me.Width = 195
+            Button65.Visible = True
         End If
 
     End Sub
@@ -583,7 +592,7 @@
 
 
 
-    Private Sub Settings_textbox_read(num_setting As Integer, box As Object) 'открытие файла с настройками и чтение настроек 
+    Private Sub Settings_textbox_read(num_setting As Integer, box As Object) 'открытие файла с настройками и чтение настроек тектового блока
 
         Dim dir As String
         Dim align_radiobox(3, 3) As RadioButton
@@ -635,16 +644,27 @@
 
         Catch ex As Exception ' действия, если не удалось открыть файл настроек
             My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style") ' создаем нужные директории на диске D
+
+            'Создай дефолтный файл настроек для всей таблицы
             s = "Arial#8#11#0.10#0.10#0#0#0#0,0,0#255,255,255#0#0#доп.формат#1#1#1"
             setting_main = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
+
+            'Создай дефолтный файл настроек для шапки таблицы
             s = "Arial#8#22#0.10#0.10#1#0#0#0,0,0#255,255,255#0#1#0#0"
             setting_head = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
+            Print(i, s)
+            FileClose(i)
+
+            'Создай дефолтный файл настроек для текстового блока
+            s = "Arial#8#22#1#0#0#0,0,0#255,255,255"
+            i = FreeFile()
+            FileOpen(i, "D:\Macros Settings\textbox_settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
 
@@ -692,6 +712,7 @@
             FileOpen(i, "D:\Macros Settings\textbox_fill_memory.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
+
 
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
@@ -993,7 +1014,6 @@
         Dim s As String
 
         For i = 0 To 7
-
             s += CStr(color_array(i).BackColor.R) + "," + CStr(color_array(i).BackColor.G) + "," + CStr(color_array(i).BackColor.B)
             If i < 7 Then
                 s += "#"
@@ -1456,6 +1476,17 @@
     End Sub
 
     Private Sub Button66_Click(sender As Object, e As EventArgs) Handles Button66.Click 'кнопка память стилей
+        style_load() ' подгружаем стили
+        'изменяем ширину окна
+        If windows_width < 650 Then
+            windows_width = 795 ' ширина окна со списком стилей
+        Else
+            windows_width = 602 ' ширина окна без списка стилей
+        End If
+        Me.Width = windows_width 'устанавливаем ширину окна
+    End Sub
+
+    Private Sub style_load()
         'читаем название стилей из файла
         Dim name_styles(8) As String
         Dim num As Integer
@@ -1485,16 +1516,6 @@
         For i = 1 To 8
             color_name_style(i)
         Next
-
-
-
-        'изменяем ширину окна
-        If windows_width < 650 Then
-            windows_width = 755 ' ширина окна со списком стилей
-        Else
-            windows_width = 602 ' ширина окна без списка стилей
-        End If
-        Me.Width = windows_width 'устанавливаем ширину окна
     End Sub
 
     Private Sub save_style(sender As Object, e As EventArgs) Handles Style1.Click, Style2.Click, Style3.Click, Style4.Click, Style5.Click, Style6.Click, Style7.Click, Style8.Click
@@ -1682,7 +1703,9 @@
         set_setting_head_complete = True
         Settings_save(10)
         Settings_save(11)
-
+        For i = 1 To 4
+            upd_and_save_mem(i)
+        Next
         test_show(1)
     End Sub
 
@@ -1775,13 +1798,24 @@
 
     End Sub
 
+
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click 'сохранение настроек
         Settings_save(1)
         Settings_save(2)
-        Settings_save(4)
+        If set_setting_textbox_complete Then
+            Settings_save(4)
+        End If
+
     End Sub
 
+    Private Sub Button_color_Press_down(sender As Object, e As MouseEventArgs) Handles Button82.MouseDown, Button81.MouseDown, Button6.MouseDown, Button4.MouseDown, Button34.MouseDown, Button33.MouseDown, Button103.MouseDown, Button102.MouseDown
 
+    End Sub
+
+    Private Sub Button_color_Press_up(sender As Object, e As MouseEventArgs) Handles Button82.MouseUp, Button81.MouseUp, Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button103.MouseUp, Button102.MouseUp
+
+    End Sub
 
     Private Sub Window_view(view_id As Int16) 'Функция показывающая или скрывающая доп. опции для таблиц
         Window_view_memory = view_id
@@ -1870,6 +1904,21 @@
 
     Private Sub set_saveBtn_position(x, y)
         Button3.Location = New Point(x, y)
+    End Sub
+
+
+    Private Sub Page_Style_Leave(sender As System.Object, e As System.EventArgs) Handles TabPage4.Leave 'событие когда переходим обратно к главным настройкам
+
+    End Sub
+
+    Private Sub backToAllSetting(sender As Object, e As EventArgs) Handles Button64.Click  'кнопка на четвертой вкладке которая переходит на 0-ю вкладку
+        TabControl1.Visible = True
+        Panel7.Location = New Point(585, -5)
+        Button3.Visible = True
+        Panel8.Visible = True
+        Button64.Visible = False
+        TabControl1.SelectedTab = TabPage1
+        Button65.Visible = False
     End Sub
 
 End Class
