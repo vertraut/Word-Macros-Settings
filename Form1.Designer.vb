@@ -315,7 +315,7 @@ Partial Class Form1
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Button64 = New System.Windows.Forms.Button()
+        Me.Button65 = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Style8 = New System.Windows.Forms.Button()
         Me.Style7 = New System.Windows.Forms.Button()
@@ -325,6 +325,7 @@ Partial Class Form1
         Me.Style3 = New System.Windows.Forms.Button()
         Me.Style2 = New System.Windows.Forms.Button()
         Me.Style1 = New System.Windows.Forms.Button()
+        Me.Button64 = New System.Windows.Forms.Button()
         Me.Style_apply8 = New System.Windows.Forms.Button()
         Me.Name_style8 = New System.Windows.Forms.TextBox()
         Me.Style_apply7 = New System.Windows.Forms.Button()
@@ -341,7 +342,6 @@ Partial Class Form1
         Me.Name_style2 = New System.Windows.Forms.TextBox()
         Me.Style_apply1 = New System.Windows.Forms.Button()
         Me.Name_style1 = New System.Windows.Forms.TextBox()
-        Me.Button65 = New System.Windows.Forms.Button()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -1124,6 +1124,7 @@ Partial Class Form1
         'Button56
         '
         Me.Button56.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button56.Image = CType(resources.GetObject("Button56.Image"), System.Drawing.Image)
         Me.Button56.Location = New System.Drawing.Point(193, 90)
         Me.Button56.Name = "Button56"
         Me.Button56.Size = New System.Drawing.Size(35, 31)
@@ -1134,6 +1135,7 @@ Partial Class Form1
         'Button57
         '
         Me.Button57.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button57.Image = CType(resources.GetObject("Button57.Image"), System.Drawing.Image)
         Me.Button57.Location = New System.Drawing.Point(193, 20)
         Me.Button57.Name = "Button57"
         Me.Button57.Size = New System.Drawing.Size(35, 31)
@@ -1890,6 +1892,7 @@ Partial Class Form1
         'Button33
         '
         Me.Button33.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button33.Image = CType(resources.GetObject("Button33.Image"), System.Drawing.Image)
         Me.Button33.Location = New System.Drawing.Point(193, 90)
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(35, 31)
@@ -1900,6 +1903,7 @@ Partial Class Form1
         'Button34
         '
         Me.Button34.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button34.Image = CType(resources.GetObject("Button34.Image"), System.Drawing.Image)
         Me.Button34.Location = New System.Drawing.Point(193, 20)
         Me.Button34.Name = "Button34"
         Me.Button34.Size = New System.Drawing.Size(35, 31)
@@ -2540,6 +2544,7 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
         Me.Button4.Location = New System.Drawing.Point(193, 91)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(35, 31)
@@ -2550,6 +2555,7 @@ Partial Class Form1
         'Button6
         '
         Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
         Me.Button6.Location = New System.Drawing.Point(193, 21)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(35, 31)
@@ -2960,6 +2966,7 @@ Partial Class Form1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.aim
         Me.PictureBox1.Location = New System.Drawing.Point(63, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(145, 130)
@@ -3590,16 +3597,20 @@ Partial Class Form1
         Me.Panel7.Size = New System.Drawing.Size(196, 239)
         Me.Panel7.TabIndex = 65
         '
-        'Button64
+        'Button65
         '
-        Me.Button64.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Button64.Location = New System.Drawing.Point(25, 1)
-        Me.Button64.Name = "Button64"
-        Me.Button64.Size = New System.Drawing.Size(76, 30)
-        Me.Button64.TabIndex = 0
-        Me.Button64.Text = "◀️ Назад"
-        Me.Button64.UseVisualStyleBackColor = True
-        Me.Button64.Visible = False
+        Me.Button65.BackColor = System.Drawing.Color.Transparent
+        Me.Button65.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button65.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button65.FlatAppearance.BorderSize = 5
+        Me.Button65.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button65.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.topmost_btn
+        Me.Button65.Location = New System.Drawing.Point(165, 1)
+        Me.Button65.Name = "Button65"
+        Me.Button65.Size = New System.Drawing.Size(27, 30)
+        Me.Button65.TabIndex = 66
+        Me.Button65.UseVisualStyleBackColor = False
+        Me.Button65.Visible = False
         '
         'Panel8
         '
@@ -3711,6 +3722,17 @@ Partial Class Form1
         Me.Style1.TabStop = False
         Me.Style1.Text = "⚫️"
         Me.Style1.UseVisualStyleBackColor = True
+        '
+        'Button64
+        '
+        Me.Button64.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.Button64.Location = New System.Drawing.Point(25, 1)
+        Me.Button64.Name = "Button64"
+        Me.Button64.Size = New System.Drawing.Size(76, 30)
+        Me.Button64.TabIndex = 0
+        Me.Button64.Text = "◀️ Назад"
+        Me.Button64.UseVisualStyleBackColor = True
+        Me.Button64.Visible = False
         '
         'Style_apply8
         '
@@ -3863,17 +3885,6 @@ Partial Class Form1
         Me.Name_style1.Name = "Name_style1"
         Me.Name_style1.Size = New System.Drawing.Size(137, 22)
         Me.Name_style1.TabIndex = 206
-        '
-        'Button65
-        '
-        Me.Button65.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button65.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.topmost_btn
-        Me.Button65.Location = New System.Drawing.Point(165, 1)
-        Me.Button65.Name = "Button65"
-        Me.Button65.Size = New System.Drawing.Size(27, 30)
-        Me.Button65.TabIndex = 66
-        Me.Button65.UseVisualStyleBackColor = True
-        Me.Button65.Visible = False
         '
         'Form1
         '

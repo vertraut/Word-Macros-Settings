@@ -108,7 +108,7 @@
         End If
 
         If TabControl1.SelectedIndex = 3 Then 'Если выбрана вкладка "стили"
-            Me.TopMost = True
+
             style_load()
             Panel7.Location = New Point(-20, 3)
             TabControl1.Visible = False
@@ -118,6 +118,7 @@
             Me.Height = 280
             Me.Width = 195
             Button65.Visible = True
+            Me.MinimizeBox = False
         End If
 
     End Sub
@@ -1813,6 +1814,16 @@
 
     End Sub
 
+    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click
+        If Me.TopMost Then
+            Me.TopMost = False
+            Button65.BackColor = Color.Transparent
+        Else Me.TopMost = True
+            Button65.BackColor = Color.LightGreen
+
+        End If
+    End Sub
+
     Private Sub Button_color_Press_up(sender As Object, e As MouseEventArgs) Handles Button82.MouseUp, Button81.MouseUp, Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button103.MouseUp, Button102.MouseUp
 
     End Sub
@@ -1907,9 +1918,6 @@
     End Sub
 
 
-    Private Sub Page_Style_Leave(sender As System.Object, e As System.EventArgs) Handles TabPage4.Leave 'событие когда переходим обратно к главным настройкам
-
-    End Sub
 
     Private Sub backToAllSetting(sender As Object, e As EventArgs) Handles Button64.Click  'кнопка на четвертой вкладке которая переходит на 0-ю вкладку
         TabControl1.Visible = True
@@ -1919,6 +1927,7 @@
         Button64.Visible = False
         TabControl1.SelectedTab = TabPage1
         Button65.Visible = False
+        Me.MinimizeBox = True
     End Sub
 
 End Class
