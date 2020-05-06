@@ -1481,6 +1481,13 @@
         Name_style7.Text = name_styles(6)
         Name_style8.Text = name_styles(7)
 
+        'красим все имена стилей в используемые в них цвета
+        For i = 1 To 8
+            color_name_style(i)
+        Next
+
+
+
         'изменяем ширину окна
         If windows_width < 650 Then
             windows_width = 755 ' ширина окна со списком стилей
@@ -1518,43 +1525,35 @@
 
         'формируем новую строку настроек
         Dim s As String
+        Dim num_style As Int16
         s = setting_main + "@" + setting_head
 
-        'Замняем нужный элемент на новый (настройки таблицы + разделитель + настройки шапки)
+        'Определяем номер стиля
         Select Case sender.name
             Case "Style1"
-                styles(0) = s
-                Name_style1.BackColor = Button10.BackColor
-                Name_style1.ForeColor = Button9.BackColor
+                num_style = 1
             Case "Style2"
-                styles(1) = s
-                Name_style2.BackColor = Button10.BackColor
-                Name_style2.ForeColor = Button9.BackColor
+                num_style = 2
             Case "Style3"
-                styles(2) = s
-                Name_style3.BackColor = Button10.BackColor
-                Name_style3.ForeColor = Button9.BackColor
+                num_style = 3
             Case "Style4"
-                styles(3) = s
-                Name_style4.BackColor = Button10.BackColor
-                Name_style4.ForeColor = Button9.BackColor
+                num_style = 4
             Case "Style5"
-                styles(4) = s
-                Name_style5.BackColor = Button10.BackColor
-                Name_style5.ForeColor = Button9.BackColor
+                num_style = 5
             Case "Style6"
-                styles(5) = s
-                Name_style6.BackColor = Button10.BackColor
-                Name_style6.ForeColor = Button9.BackColor
+                num_style = 6
             Case "Style7"
-                styles(6) = s
-                Name_style7.BackColor = Button10.BackColor
-                Name_style7.ForeColor = Button9.BackColor
+                num_style = 7
             Case Else
-                styles(7) = s
-                Name_style8.BackColor = Button10.BackColor
-                Name_style8.ForeColor = Button9.BackColor
+                num_style = 8
         End Select
+
+        'Замняем нужный элемент на новый (настройки таблицы + разделитель + настройки шапки)
+        'num_style - 1 потому что номера идут с 1, а массив с 0, поэтому отнимаем 1
+        styles(num_style - 1) = s
+
+
+
 
         'Сохраняем обновленные файл настроек
         FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Output, OpenAccess.Default)
@@ -1566,7 +1565,66 @@
         Next
         FileClose(1)
 
+        'красим название стиля
+        color_name_style(num_style)
+
     End Sub
+
+    Private Sub color_name_style(num_style)
+
+        Dim this_style As String
+        Dim fore_color, back_color As String
+        Dim fore_color_rgb, back_color_rgb As Color
+
+        'Считываем массив всех настроек
+        Dim styles(8) As String
+        Dim num As Integer
+        num = 0
+        ' Open file.
+        FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Input, OpenAccess.Default)
+        ' Читаем файл до конца
+        While Not EOF(1)
+            ' Read line into variable.
+            styles(num) = LineInput(1)
+            num = num + 1
+        End While
+        FileClose(1)
+
+        'Получаем строку с настройками
+        this_style = styles(num_style - 1).Split("@")(0).ToString()
+        fore_color = this_style.Split("#")(8).ToString()
+        back_color = this_style.Split("#")(9).ToString()
+        fore_color_rgb = Color.FromArgb(CInt(fore_color.Split(",")(0).ToString), CInt(fore_color.Split(",")(1).ToString), CInt(fore_color.Split(",")(2).ToString))
+        back_color_rgb = Color.FromArgb(CInt(back_color.Split(",")(0).ToString), CInt(back_color.Split(",")(1).ToString), CInt(back_color.Split(",")(2).ToString))
+        Select Case num_style
+            Case 1
+                Name_style1.BackColor = back_color_rgb
+                Name_style1.ForeColor = fore_color_rgb
+            Case 2
+                Name_style2.BackColor = back_color_rgb
+                Name_style2.ForeColor = fore_color_rgb
+            Case 3
+                Name_style3.BackColor = back_color_rgb
+                Name_style3.ForeColor = fore_color_rgb
+            Case 4
+                Name_style4.BackColor = back_color_rgb
+                Name_style4.ForeColor = fore_color_rgb
+            Case 5
+                Name_style5.BackColor = back_color_rgb
+                Name_style5.ForeColor = fore_color_rgb
+            Case 6
+                Name_style6.BackColor = back_color_rgb
+                Name_style6.ForeColor = fore_color_rgb
+            Case 7
+                Name_style7.BackColor = back_color_rgb
+                Name_style7.ForeColor = fore_color_rgb
+            Case 8
+                Name_style8.BackColor = back_color_rgb
+                Name_style8.ForeColor = fore_color_rgb
+        End Select
+    End Sub
+
+
 
     Private Sub apply_style(sender As Object, e As EventArgs) Handles Style_apply1.Click, Style_apply2.Click, Style_apply3.Click, Style_apply4.Click, Style_apply5.Click, Style_apply6.Click, Style_apply7.Click, Style_apply8.Click 'применение стиля
 
