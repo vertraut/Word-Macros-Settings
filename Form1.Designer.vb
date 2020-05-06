@@ -27,6 +27,8 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Button68 = New System.Windows.Forms.Button()
+        Me.Button67 = New System.Windows.Forms.Button()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.Button62 = New System.Windows.Forms.Button()
         Me.Button31 = New System.Windows.Forms.Button()
@@ -342,7 +344,6 @@ Partial Class Form1
         Me.Name_style2 = New System.Windows.Forms.TextBox()
         Me.Style_apply1 = New System.Windows.Forms.Button()
         Me.Name_style1 = New System.Windows.Forms.TextBox()
-        Me.TabPage2.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -371,7 +372,6 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.GroupBox10)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -382,6 +382,8 @@ Partial Class Form1
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.Button68)
+        Me.GroupBox10.Controls.Add(Me.Button67)
         Me.GroupBox10.Controls.Add(Me.Button30)
         Me.GroupBox10.Controls.Add(Me.Button62)
         Me.GroupBox10.Controls.Add(Me.Button31)
@@ -406,17 +408,41 @@ Partial Class Form1
         Me.GroupBox10.Controls.Add(Me.Button82)
         Me.GroupBox10.Controls.Add(Me.Label3)
         Me.GroupBox10.Controls.Add(Me.Label4)
-        Me.GroupBox10.Location = New System.Drawing.Point(17, 16)
+        Me.GroupBox10.Location = New System.Drawing.Point(592, 253)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(247, 157)
+        Me.GroupBox10.Size = New System.Drawing.Size(234, 188)
         Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
+        '
+        'Button68
+        '
+        Me.Button68.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.Button68.Location = New System.Drawing.Point(6, 11)
+        Me.Button68.Name = "Button68"
+        Me.Button68.Size = New System.Drawing.Size(76, 30)
+        Me.Button68.TabIndex = 67
+        Me.Button68.Text = "◀️ Назад"
+        Me.Button68.UseVisualStyleBackColor = True
+        '
+        'Button67
+        '
+        Me.Button67.BackColor = System.Drawing.Color.LightGreen
+        Me.Button67.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button67.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button67.FlatAppearance.BorderSize = 5
+        Me.Button67.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button67.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.topmost_btn
+        Me.Button67.Location = New System.Drawing.Point(201, 11)
+        Me.Button67.Name = "Button67"
+        Me.Button67.Size = New System.Drawing.Size(27, 30)
+        Me.Button67.TabIndex = 68
+        Me.Button67.UseVisualStyleBackColor = False
         '
         'Button30
         '
         Me.Button30.Cursor = System.Windows.Forms.Cursors.Cross
         Me.Button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button30.Location = New System.Drawing.Point(6, 99)
+        Me.Button30.Location = New System.Drawing.Point(6, 129)
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(37, 48)
         Me.Button30.TabIndex = 74
@@ -427,7 +453,7 @@ Partial Class Form1
         '
         Me.Button62.Cursor = System.Windows.Forms.Cursors.Cross
         Me.Button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button62.Location = New System.Drawing.Point(6, 29)
+        Me.Button62.Location = New System.Drawing.Point(6, 59)
         Me.Button62.Name = "Button62"
         Me.Button62.Size = New System.Drawing.Size(37, 48)
         Me.Button62.TabIndex = 73
@@ -438,7 +464,7 @@ Partial Class Form1
         '
         Me.Button31.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button31.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button31.Location = New System.Drawing.Point(150, 91)
+        Me.Button31.Location = New System.Drawing.Point(150, 121)
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(35, 31)
         Me.Button31.TabIndex = 72
@@ -450,7 +476,7 @@ Partial Class Form1
         '
         Me.Button63.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button63.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button63.Location = New System.Drawing.Point(150, 21)
+        Me.Button63.Location = New System.Drawing.Point(150, 51)
         Me.Button63.Name = "Button63"
         Me.Button63.Size = New System.Drawing.Size(35, 31)
         Me.Button63.TabIndex = 34
@@ -462,7 +488,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_8.Location = New System.Drawing.Point(203, 127)
+        Me.color_bg_pipetka_memory_8.Location = New System.Drawing.Point(203, 157)
         Me.color_bg_pipetka_memory_8.Name = "color_bg_pipetka_memory_8"
         Me.color_bg_pipetka_memory_8.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_8.TabIndex = 71
@@ -473,7 +499,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_7.Location = New System.Drawing.Point(177, 127)
+        Me.color_bg_pipetka_memory_7.Location = New System.Drawing.Point(177, 157)
         Me.color_bg_pipetka_memory_7.Name = "color_bg_pipetka_memory_7"
         Me.color_bg_pipetka_memory_7.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_7.TabIndex = 70
@@ -484,7 +510,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_6.Location = New System.Drawing.Point(151, 127)
+        Me.color_bg_pipetka_memory_6.Location = New System.Drawing.Point(151, 157)
         Me.color_bg_pipetka_memory_6.Name = "color_bg_pipetka_memory_6"
         Me.color_bg_pipetka_memory_6.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_6.TabIndex = 69
@@ -495,7 +521,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_5.Location = New System.Drawing.Point(125, 127)
+        Me.color_bg_pipetka_memory_5.Location = New System.Drawing.Point(125, 157)
         Me.color_bg_pipetka_memory_5.Name = "color_bg_pipetka_memory_5"
         Me.color_bg_pipetka_memory_5.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_5.TabIndex = 68
@@ -506,7 +532,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_4.Location = New System.Drawing.Point(99, 127)
+        Me.color_bg_pipetka_memory_4.Location = New System.Drawing.Point(99, 157)
         Me.color_bg_pipetka_memory_4.Name = "color_bg_pipetka_memory_4"
         Me.color_bg_pipetka_memory_4.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_4.TabIndex = 67
@@ -517,7 +543,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_3.Location = New System.Drawing.Point(73, 127)
+        Me.color_bg_pipetka_memory_3.Location = New System.Drawing.Point(73, 157)
         Me.color_bg_pipetka_memory_3.Name = "color_bg_pipetka_memory_3"
         Me.color_bg_pipetka_memory_3.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_3.TabIndex = 66
@@ -528,7 +554,7 @@ Partial Class Form1
         '
         Me.color_bg_pipetka_memory_2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_bg_pipetka_memory_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_bg_pipetka_memory_2.Location = New System.Drawing.Point(47, 127)
+        Me.color_bg_pipetka_memory_2.Location = New System.Drawing.Point(47, 157)
         Me.color_bg_pipetka_memory_2.Name = "color_bg_pipetka_memory_2"
         Me.color_bg_pipetka_memory_2.Size = New System.Drawing.Size(20, 20)
         Me.color_bg_pipetka_memory_2.TabIndex = 65
@@ -539,7 +565,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_7.Location = New System.Drawing.Point(177, 58)
+        Me.color_text_pipetka_memory_7.Location = New System.Drawing.Point(177, 88)
         Me.color_text_pipetka_memory_7.Name = "color_text_pipetka_memory_7"
         Me.color_text_pipetka_memory_7.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_7.TabIndex = 63
@@ -550,7 +576,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_6.Location = New System.Drawing.Point(151, 58)
+        Me.color_text_pipetka_memory_6.Location = New System.Drawing.Point(151, 88)
         Me.color_text_pipetka_memory_6.Name = "color_text_pipetka_memory_6"
         Me.color_text_pipetka_memory_6.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_6.TabIndex = 62
@@ -561,7 +587,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_5.Location = New System.Drawing.Point(125, 58)
+        Me.color_text_pipetka_memory_5.Location = New System.Drawing.Point(125, 88)
         Me.color_text_pipetka_memory_5.Name = "color_text_pipetka_memory_5"
         Me.color_text_pipetka_memory_5.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_5.TabIndex = 61
@@ -570,7 +596,7 @@ Partial Class Form1
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(47, 99)
+        Me.TextBox8.Location = New System.Drawing.Point(47, 129)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(97, 22)
         Me.TextBox8.TabIndex = 51
@@ -578,7 +604,7 @@ Partial Class Form1
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(47, 29)
+        Me.TextBox9.Location = New System.Drawing.Point(47, 59)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(97, 22)
         Me.TextBox9.TabIndex = 50
@@ -588,7 +614,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_4.Location = New System.Drawing.Point(99, 58)
+        Me.color_text_pipetka_memory_4.Location = New System.Drawing.Point(99, 88)
         Me.color_text_pipetka_memory_4.Name = "color_text_pipetka_memory_4"
         Me.color_text_pipetka_memory_4.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_4.TabIndex = 60
@@ -599,7 +625,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_3.Location = New System.Drawing.Point(73, 58)
+        Me.color_text_pipetka_memory_3.Location = New System.Drawing.Point(73, 88)
         Me.color_text_pipetka_memory_3.Name = "color_text_pipetka_memory_3"
         Me.color_text_pipetka_memory_3.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_3.TabIndex = 59
@@ -610,7 +636,7 @@ Partial Class Form1
         '
         Me.color_text_pipetka_memory_2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.color_text_pipetka_memory_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_2.Location = New System.Drawing.Point(47, 58)
+        Me.color_text_pipetka_memory_2.Location = New System.Drawing.Point(47, 88)
         Me.color_text_pipetka_memory_2.Name = "color_text_pipetka_memory_2"
         Me.color_text_pipetka_memory_2.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_2.TabIndex = 58
@@ -620,7 +646,7 @@ Partial Class Form1
         'color_text_pipetka_memory_8
         '
         Me.color_text_pipetka_memory_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.color_text_pipetka_memory_8.Location = New System.Drawing.Point(203, 58)
+        Me.color_text_pipetka_memory_8.Location = New System.Drawing.Point(203, 88)
         Me.color_text_pipetka_memory_8.Name = "color_text_pipetka_memory_8"
         Me.color_text_pipetka_memory_8.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_8.TabIndex = 33
@@ -630,7 +656,8 @@ Partial Class Form1
         'Button81
         '
         Me.Button81.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button81.Location = New System.Drawing.Point(193, 91)
+        Me.Button81.Image = CType(resources.GetObject("Button81.Image"), System.Drawing.Image)
+        Me.Button81.Location = New System.Drawing.Point(193, 121)
         Me.Button81.Name = "Button81"
         Me.Button81.Size = New System.Drawing.Size(35, 31)
         Me.Button81.TabIndex = 52
@@ -640,7 +667,8 @@ Partial Class Form1
         'Button82
         '
         Me.Button82.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button82.Location = New System.Drawing.Point(193, 21)
+        Me.Button82.Image = CType(resources.GetObject("Button82.Image"), System.Drawing.Image)
+        Me.Button82.Location = New System.Drawing.Point(193, 51)
         Me.Button82.Name = "Button82"
         Me.Button82.Size = New System.Drawing.Size(35, 31)
         Me.Button82.TabIndex = 49
@@ -650,7 +678,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 81)
+        Me.Label3.Location = New System.Drawing.Point(6, 111)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(146, 16)
         Me.Label3.TabIndex = 49
@@ -659,7 +687,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 10)
+        Me.Label4.Location = New System.Drawing.Point(6, 40)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 16)
         Me.Label4.TabIndex = 48
@@ -2937,7 +2965,7 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Location = New System.Drawing.Point(1091, 234)
+        Me.Panel3.Location = New System.Drawing.Point(1096, 235)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(249, 207)
         Me.Panel3.TabIndex = 4
@@ -3599,7 +3627,7 @@ Partial Class Form1
         '
         'Button65
         '
-        Me.Button65.BackColor = System.Drawing.Color.Transparent
+        Me.Button65.BackColor = System.Drawing.Color.LightGreen
         Me.Button65.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button65.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Button65.FlatAppearance.BorderSize = 5
@@ -3892,10 +3920,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClientSize = New System.Drawing.Size(1462, 684)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.CheckBox10)
@@ -3917,7 +3946,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Text = "Macros Settings v.1.0 by vertraut"
-        Me.TabPage2.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
@@ -4285,4 +4313,6 @@ Partial Class Form1
     Friend WithEvents Style1 As Button
     Friend WithEvents Button64 As Button
     Friend WithEvents Button65 As Button
+    Friend WithEvents Button68 As Button
+    Friend WithEvents Button67 As Button
 End Class

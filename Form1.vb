@@ -67,6 +67,10 @@
         End If
 
         If TabControl1.SelectedIndex = 1 Then 'Если выбрана пипетка
+            GroupBox10.Location = New Point(10, 5)
+            GroupBox10.Visible = True
+            TabControl1.Visible = False
+            Me.MinimizeBox = False
             Me.TopMost = True
             Label19.Visible = False
             Button3.Visible = False
@@ -108,8 +112,8 @@
         End If
 
         If TabControl1.SelectedIndex = 3 Then 'Если выбрана вкладка "стили"
-
             style_load()
+            Me.TopMost = True
             Panel7.Location = New Point(-20, 3)
             TabControl1.Visible = False
             Button3.Visible = False
@@ -1814,12 +1818,19 @@
 
     End Sub
 
-    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click
+    Private Sub Button68_Click(sender As Object, e As EventArgs) Handles Button68.Click
+        TabControl1.Visible = True
+        TabControl1.SelectedTab = TabPage1
+        Me.MinimizeBox = True
+        GroupBox10.Visible = False
+    End Sub
+
+    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click, Button67.Click
         If Me.TopMost Then
             Me.TopMost = False
-            Button65.BackColor = Color.Transparent
+            sender.BackColor = Color.Transparent
         Else Me.TopMost = True
-            Button65.BackColor = Color.LightGreen
+            sender.BackColor = Color.LightGreen
 
         End If
     End Sub
