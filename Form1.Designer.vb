@@ -316,26 +316,26 @@ Partial Class Form1
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Name_style1 = New System.Windows.Forms.TextBox()
         Me.Style1 = New System.Windows.Forms.Button()
-        Me.Style_save1 = New System.Windows.Forms.Button()
-        Me.Style_save2 = New System.Windows.Forms.Button()
+        Me.Style_apply1 = New System.Windows.Forms.Button()
+        Me.Style_apply2 = New System.Windows.Forms.Button()
         Me.Style2 = New System.Windows.Forms.Button()
         Me.Name_style2 = New System.Windows.Forms.TextBox()
-        Me.Style_save3 = New System.Windows.Forms.Button()
+        Me.Style_apply3 = New System.Windows.Forms.Button()
         Me.Style3 = New System.Windows.Forms.Button()
         Me.Name_style3 = New System.Windows.Forms.TextBox()
-        Me.Style_save4 = New System.Windows.Forms.Button()
+        Me.Style_apply4 = New System.Windows.Forms.Button()
         Me.Style4 = New System.Windows.Forms.Button()
         Me.Name_style4 = New System.Windows.Forms.TextBox()
-        Me.Style_save5 = New System.Windows.Forms.Button()
+        Me.Style_apply5 = New System.Windows.Forms.Button()
         Me.Style5 = New System.Windows.Forms.Button()
         Me.Name_style5 = New System.Windows.Forms.TextBox()
-        Me.Style_save6 = New System.Windows.Forms.Button()
+        Me.Style_apply6 = New System.Windows.Forms.Button()
         Me.Style6 = New System.Windows.Forms.Button()
         Me.Name_style6 = New System.Windows.Forms.TextBox()
-        Me.Style_save7 = New System.Windows.Forms.Button()
+        Me.Style_apply7 = New System.Windows.Forms.Button()
         Me.Style7 = New System.Windows.Forms.Button()
         Me.Name_style7 = New System.Windows.Forms.TextBox()
-        Me.Style_save8 = New System.Windows.Forms.Button()
+        Me.Style_apply8 = New System.Windows.Forms.Button()
         Me.Style8 = New System.Windows.Forms.Button()
         Me.Name_style8 = New System.Windows.Forms.TextBox()
         Me.TabPage2.SuspendLayout()
@@ -1678,6 +1678,7 @@ Partial Class Form1
         '
         Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button13.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button13.ForeColor = System.Drawing.Color.Green
         Me.Button13.Location = New System.Drawing.Point(150, 90)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(35, 31)
@@ -1701,6 +1702,7 @@ Partial Class Form1
         '
         Me.Button15.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button15.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button15.ForeColor = System.Drawing.Color.Green
         Me.Button15.Location = New System.Drawing.Point(150, 20)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(35, 31)
@@ -2328,6 +2330,7 @@ Partial Class Form1
         '
         Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button8.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.Green
         Me.Button8.Location = New System.Drawing.Point(150, 91)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(35, 31)
@@ -2351,6 +2354,7 @@ Partial Class Form1
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.Green
         Me.Button5.Location = New System.Drawing.Point(150, 21)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(35, 31)
@@ -3573,8 +3577,8 @@ Partial Class Form1
         '
         'Style1
         '
-        Me.Style1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style1.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style1.Location = New System.Drawing.Point(586, 26)
         Me.Style1.Name = "Style1"
         Me.Style1.Size = New System.Drawing.Size(23, 24)
@@ -3583,34 +3587,34 @@ Partial Class Form1
         Me.Style1.Text = "⚫️"
         Me.Style1.UseVisualStyleBackColor = True
         '
-        'Style_save1
+        'Style_apply1
         '
-        Me.Style_save1.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save1.Location = New System.Drawing.Point(709, 26)
-        Me.Style_save1.Name = "Style_save1"
-        Me.Style_save1.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save1.TabIndex = 183
-        Me.Style_save1.TabStop = False
-        Me.Style_save1.Text = "✓"
-        Me.Style_save1.UseVisualStyleBackColor = True
+        Me.Style_apply1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply1.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply1.Location = New System.Drawing.Point(709, 26)
+        Me.Style_apply1.Name = "Style_apply1"
+        Me.Style_apply1.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply1.TabIndex = 183
+        Me.Style_apply1.TabStop = False
+        Me.Style_apply1.Text = "✓"
+        Me.Style_apply1.UseVisualStyleBackColor = True
         '
-        'Style_save2
+        'Style_apply2
         '
-        Me.Style_save2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save2.Location = New System.Drawing.Point(709, 52)
-        Me.Style_save2.Name = "Style_save2"
-        Me.Style_save2.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save2.TabIndex = 186
-        Me.Style_save2.TabStop = False
-        Me.Style_save2.Text = "✓"
-        Me.Style_save2.UseVisualStyleBackColor = True
+        Me.Style_apply2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply2.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply2.Location = New System.Drawing.Point(709, 52)
+        Me.Style_apply2.Name = "Style_apply2"
+        Me.Style_apply2.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply2.TabIndex = 186
+        Me.Style_apply2.TabStop = False
+        Me.Style_apply2.Text = "✓"
+        Me.Style_apply2.UseVisualStyleBackColor = True
         '
         'Style2
         '
-        Me.Style2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style2.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style2.Location = New System.Drawing.Point(586, 52)
         Me.Style2.Name = "Style2"
         Me.Style2.Size = New System.Drawing.Size(23, 24)
@@ -3626,22 +3630,22 @@ Partial Class Form1
         Me.Name_style2.Size = New System.Drawing.Size(100, 22)
         Me.Name_style2.TabIndex = 184
         '
-        'Style_save3
+        'Style_apply3
         '
-        Me.Style_save3.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save3.Location = New System.Drawing.Point(709, 78)
-        Me.Style_save3.Name = "Style_save3"
-        Me.Style_save3.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save3.TabIndex = 190
-        Me.Style_save3.TabStop = False
-        Me.Style_save3.Text = "✓"
-        Me.Style_save3.UseVisualStyleBackColor = True
+        Me.Style_apply3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply3.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply3.Location = New System.Drawing.Point(709, 78)
+        Me.Style_apply3.Name = "Style_apply3"
+        Me.Style_apply3.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply3.TabIndex = 190
+        Me.Style_apply3.TabStop = False
+        Me.Style_apply3.Text = "✓"
+        Me.Style_apply3.UseVisualStyleBackColor = True
         '
         'Style3
         '
-        Me.Style3.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style3.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style3.Location = New System.Drawing.Point(586, 78)
         Me.Style3.Name = "Style3"
         Me.Style3.Size = New System.Drawing.Size(23, 24)
@@ -3657,22 +3661,22 @@ Partial Class Form1
         Me.Name_style3.Size = New System.Drawing.Size(100, 22)
         Me.Name_style3.TabIndex = 188
         '
-        'Style_save4
+        'Style_apply4
         '
-        Me.Style_save4.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save4.Location = New System.Drawing.Point(709, 104)
-        Me.Style_save4.Name = "Style_save4"
-        Me.Style_save4.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save4.TabIndex = 193
-        Me.Style_save4.TabStop = False
-        Me.Style_save4.Text = "✓"
-        Me.Style_save4.UseVisualStyleBackColor = True
+        Me.Style_apply4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply4.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply4.Location = New System.Drawing.Point(709, 104)
+        Me.Style_apply4.Name = "Style_apply4"
+        Me.Style_apply4.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply4.TabIndex = 193
+        Me.Style_apply4.TabStop = False
+        Me.Style_apply4.Text = "✓"
+        Me.Style_apply4.UseVisualStyleBackColor = True
         '
         'Style4
         '
-        Me.Style4.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style4.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style4.Location = New System.Drawing.Point(586, 104)
         Me.Style4.Name = "Style4"
         Me.Style4.Size = New System.Drawing.Size(23, 24)
@@ -3688,22 +3692,22 @@ Partial Class Form1
         Me.Name_style4.Size = New System.Drawing.Size(100, 22)
         Me.Name_style4.TabIndex = 191
         '
-        'Style_save5
+        'Style_apply5
         '
-        Me.Style_save5.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save5.Location = New System.Drawing.Point(709, 130)
-        Me.Style_save5.Name = "Style_save5"
-        Me.Style_save5.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save5.TabIndex = 196
-        Me.Style_save5.TabStop = False
-        Me.Style_save5.Text = "✓"
-        Me.Style_save5.UseVisualStyleBackColor = True
+        Me.Style_apply5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply5.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply5.Location = New System.Drawing.Point(709, 130)
+        Me.Style_apply5.Name = "Style_apply5"
+        Me.Style_apply5.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply5.TabIndex = 196
+        Me.Style_apply5.TabStop = False
+        Me.Style_apply5.Text = "✓"
+        Me.Style_apply5.UseVisualStyleBackColor = True
         '
         'Style5
         '
-        Me.Style5.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style5.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style5.Location = New System.Drawing.Point(586, 130)
         Me.Style5.Name = "Style5"
         Me.Style5.Size = New System.Drawing.Size(23, 24)
@@ -3719,22 +3723,22 @@ Partial Class Form1
         Me.Name_style5.Size = New System.Drawing.Size(100, 22)
         Me.Name_style5.TabIndex = 194
         '
-        'Style_save6
+        'Style_apply6
         '
-        Me.Style_save6.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save6.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save6.Location = New System.Drawing.Point(709, 156)
-        Me.Style_save6.Name = "Style_save6"
-        Me.Style_save6.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save6.TabIndex = 199
-        Me.Style_save6.TabStop = False
-        Me.Style_save6.Text = "✓"
-        Me.Style_save6.UseVisualStyleBackColor = True
+        Me.Style_apply6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply6.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply6.Location = New System.Drawing.Point(709, 156)
+        Me.Style_apply6.Name = "Style_apply6"
+        Me.Style_apply6.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply6.TabIndex = 199
+        Me.Style_apply6.TabStop = False
+        Me.Style_apply6.Text = "✓"
+        Me.Style_apply6.UseVisualStyleBackColor = True
         '
         'Style6
         '
-        Me.Style6.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style6.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style6.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style6.Location = New System.Drawing.Point(586, 156)
         Me.Style6.Name = "Style6"
         Me.Style6.Size = New System.Drawing.Size(23, 24)
@@ -3750,22 +3754,22 @@ Partial Class Form1
         Me.Name_style6.Size = New System.Drawing.Size(100, 22)
         Me.Name_style6.TabIndex = 197
         '
-        'Style_save7
+        'Style_apply7
         '
-        Me.Style_save7.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save7.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save7.Location = New System.Drawing.Point(709, 181)
-        Me.Style_save7.Name = "Style_save7"
-        Me.Style_save7.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save7.TabIndex = 202
-        Me.Style_save7.TabStop = False
-        Me.Style_save7.Text = "✓"
-        Me.Style_save7.UseVisualStyleBackColor = True
+        Me.Style_apply7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply7.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply7.Location = New System.Drawing.Point(709, 181)
+        Me.Style_apply7.Name = "Style_apply7"
+        Me.Style_apply7.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply7.TabIndex = 202
+        Me.Style_apply7.TabStop = False
+        Me.Style_apply7.Text = "✓"
+        Me.Style_apply7.UseVisualStyleBackColor = True
         '
         'Style7
         '
-        Me.Style7.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style7.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style7.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style7.Location = New System.Drawing.Point(586, 181)
         Me.Style7.Name = "Style7"
         Me.Style7.Size = New System.Drawing.Size(23, 24)
@@ -3781,22 +3785,22 @@ Partial Class Form1
         Me.Name_style7.Size = New System.Drawing.Size(100, 22)
         Me.Name_style7.TabIndex = 200
         '
-        'Style_save8
+        'Style_apply8
         '
-        Me.Style_save8.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style_save8.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Style_save8.Location = New System.Drawing.Point(709, 206)
-        Me.Style_save8.Name = "Style_save8"
-        Me.Style_save8.Size = New System.Drawing.Size(23, 24)
-        Me.Style_save8.TabIndex = 205
-        Me.Style_save8.TabStop = False
-        Me.Style_save8.Text = "✓"
-        Me.Style_save8.UseVisualStyleBackColor = True
+        Me.Style_apply8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style_apply8.ForeColor = System.Drawing.Color.Green
+        Me.Style_apply8.Location = New System.Drawing.Point(709, 206)
+        Me.Style_apply8.Name = "Style_apply8"
+        Me.Style_apply8.Size = New System.Drawing.Size(23, 24)
+        Me.Style_apply8.TabIndex = 205
+        Me.Style_apply8.TabStop = False
+        Me.Style_apply8.Text = "✓"
+        Me.Style_apply8.UseVisualStyleBackColor = True
         '
         'Style8
         '
-        Me.Style8.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Style8.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style8.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Style8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Style8.Location = New System.Drawing.Point(586, 206)
         Me.Style8.Name = "Style8"
         Me.Style8.Size = New System.Drawing.Size(23, 24)
@@ -3818,28 +3822,28 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClientSize = New System.Drawing.Size(1462, 684)
-        Me.Controls.Add(Me.Style_save8)
+        Me.Controls.Add(Me.Style_apply8)
         Me.Controls.Add(Me.Style8)
         Me.Controls.Add(Me.Name_style8)
-        Me.Controls.Add(Me.Style_save7)
+        Me.Controls.Add(Me.Style_apply7)
         Me.Controls.Add(Me.Style7)
         Me.Controls.Add(Me.Name_style7)
-        Me.Controls.Add(Me.Style_save6)
+        Me.Controls.Add(Me.Style_apply6)
         Me.Controls.Add(Me.Style6)
         Me.Controls.Add(Me.Name_style6)
-        Me.Controls.Add(Me.Style_save5)
+        Me.Controls.Add(Me.Style_apply5)
         Me.Controls.Add(Me.Style5)
         Me.Controls.Add(Me.Name_style5)
-        Me.Controls.Add(Me.Style_save4)
+        Me.Controls.Add(Me.Style_apply4)
         Me.Controls.Add(Me.Style4)
         Me.Controls.Add(Me.Name_style4)
-        Me.Controls.Add(Me.Style_save3)
+        Me.Controls.Add(Me.Style_apply3)
         Me.Controls.Add(Me.Style3)
         Me.Controls.Add(Me.Name_style3)
-        Me.Controls.Add(Me.Style_save2)
+        Me.Controls.Add(Me.Style_apply2)
         Me.Controls.Add(Me.Style2)
         Me.Controls.Add(Me.Name_style2)
-        Me.Controls.Add(Me.Style_save1)
+        Me.Controls.Add(Me.Style_apply1)
         Me.Controls.Add(Me.Style1)
         Me.Controls.Add(Me.Name_style1)
         Me.Controls.Add(Me.Label31)
@@ -4204,26 +4208,26 @@ Partial Class Form1
     Friend WithEvents Name_style1 As TextBox
     Friend WithEvents Style1 As Button
     Friend WithEvents Button66 As Button
-    Friend WithEvents Style_save1 As Button
-    Friend WithEvents Style_save2 As Button
+    Friend WithEvents Style_apply1 As Button
+    Friend WithEvents Style_apply2 As Button
     Friend WithEvents Style2 As Button
     Friend WithEvents Name_style2 As TextBox
-    Friend WithEvents Style_save3 As Button
+    Friend WithEvents Style_apply3 As Button
     Friend WithEvents Style3 As Button
     Friend WithEvents Name_style3 As TextBox
-    Friend WithEvents Style_save4 As Button
+    Friend WithEvents Style_apply4 As Button
     Friend WithEvents Style4 As Button
     Friend WithEvents Name_style4 As TextBox
-    Friend WithEvents Style_save5 As Button
+    Friend WithEvents Style_apply5 As Button
     Friend WithEvents Style5 As Button
     Friend WithEvents Name_style5 As TextBox
-    Friend WithEvents Style_save6 As Button
+    Friend WithEvents Style_apply6 As Button
     Friend WithEvents Style6 As Button
     Friend WithEvents Name_style6 As TextBox
-    Friend WithEvents Style_save7 As Button
+    Friend WithEvents Style_apply7 As Button
     Friend WithEvents Style7 As Button
     Friend WithEvents Name_style7 As TextBox
-    Friend WithEvents Style_save8 As Button
+    Friend WithEvents Style_apply8 As Button
     Friend WithEvents Style8 As Button
     Friend WithEvents Name_style8 As TextBox
     Friend WithEvents debug As TextBox

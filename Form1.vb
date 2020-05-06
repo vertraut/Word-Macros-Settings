@@ -15,7 +15,9 @@
     Public set_setting_textbox_complete As Boolean = False
     Public Window_view_memory As Integer ' служит для запоминания состояния вкладки "Таблица"
     Public windows_width As Integer ' ширина рабочего окна
-    Dim setting_main, settings_head As String 'переменные для хранения строки настроек (как они хранятся в файле)
+    Dim setting_main, setting_head As String 'переменные для хранения строки настроек (как они хранятся в файле)
+
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -28,8 +30,6 @@
         ComboBox15.DataSource = fonts_name.Families
         ComboBox15.DisplayMember = "Name"
         windows_width = 602 ' задаем ширину окна по умолчанию
-
-
         start_program()
 
     End Sub
@@ -52,30 +52,10 @@
 
         GroupBox1.TabStop = False
         Window_view(1)
-        Settings_read(0, ComboBox2, 1) ' установка названия шрифта
-        Settings_read(1, ComboBox1, 1) ' установка размера шрифта
-        Settings_read(2, RadioButton5, 1) 'установка выравнивания
-        Settings_read(3, ComboBox4, 1) ' установка отступов верх/низ
-        Settings_read(4, ComboBox3, 1) ' установка отступов лево/право
-        Settings_read(5, CheckBox3, 1) 'жирный
-        Settings_read(6, CheckBox2, 1) 'курсив
-        Settings_read(7, CheckBox1, 1) 'подчеркнутый
-        Settings_read(8, TextBox2, 1) 'установка цвета шрифта
-        Settings_read(9, TextBox3, 1) 'установка цвета фона ячейки
-        Settings_read(10, CheckBox5, 1) 'использовать ж, к, подчеркнутый?
-        Settings_read(11, CheckBox4, 1) 'проверка настроек шапки надо или нет
-        Settings_read(12, CheckBox10, 1) 'проверка настроек ячеек надо или нет
-        Settings_read(14, CheckBox15, 1) 'проверка нужно ли красить текст
-        Settings_read(15, CheckBox16, 1) 'нужно ли красить фон
-        Settings_read(13, ComboBox10, 1) 'как выравнивать саму таблицу (по ширине, по содержимому, зафискисровать, не выравнивать)
-        color_set(Button10, TextBox3.Text, 0) ' красим образец цвета фона 
-        color_set(Button9, TextBox2.Text, 0) ' красим образец цвета текста 
-        color_memory_set(1) 'заносим цвета из памяти на панель для текста
-        color_memory_set(2) 'заносим цвета из памяти на панель для фона
-
-
+        init_table() 'заносим цвета из памяти на панель для текста
+        settings_string_read("table")
+        settings_string_read("head")
         set_setting_table_complete = True
-
         test_show(1)
     End Sub
 
@@ -93,8 +73,6 @@
             Me.Height = 249
             Me.Width = 300
             set_controlTab_size(210) 'устанавливает размер окна с вкладками
-
-
             color_set(Button62, TextBox9.Text, 0) ' красим образец цвета фона 
             color_set(Button30, TextBox8.Text, 0) ' красим образец цвета текста 
             color_memory_set(7) 'заносим цвета из памяти на панель для текста
@@ -151,23 +129,7 @@
         If CheckBox4.Checked = True Then 'показать настройки шапки
             CheckBox4.TabStop = False
             GroupBox5.TabStop = False
-            Settings_read(0, ComboBox8, 2) ' установка названия шрифта
-            Settings_read(1, ComboBox5, 2) ' установка размера шрифта
-            Settings_read(2, Head_RadioButton5, 2) 'установка выравнивания
-            Settings_read(3, ComboBox7, 2) ' установка отступов верх/низ
-            Settings_read(4, ComboBox6, 2) ' установка отступов лево/право
-            Settings_read(5, CheckBox9, 2) 'жирный
-            Settings_read(6, CheckBox8, 2) 'курсив
-            Settings_read(7, CheckBox7, 2) 'подчеркнутый
-            Settings_read(8, TextBox5, 2) 'установка цвета шрифта
-            Settings_read(9, TextBox4, 2) 'установка цвета фона ячейки
-            Settings_read(11, ComboBox9, 2) 'количество строк шапки
-            color_set(Button14, TextBox5.Text, 0) ' красим образец цвета текста
-            color_set(Button12, TextBox4.Text, 0) ' красим образец цвета фона 
-            color_memory_set(3) 'установка цветов цвета в память для текста
-            color_memory_set(4) 'установка цветов в память для фона
-            Settings_read(12, CheckBox17, 2) 'проверка нужно ли красить текст
-            Settings_read(13, CheckBox18, 2) 'нужно ли красить фон
+            init_head()
             set_setting_head_complete = True
 
 
@@ -257,8 +219,9 @@
 
         Dim color_text, color_fill As TextBox
 
-        If goal = 1 Then
+        If goal = 1 Or goal = 10 Then
             dir = "D:\Macros Settings\settings.txt"
+
             radiobtn_array = radiobtn_align
             checkbox_bold_show = CheckBox3
             checkbox_italic_show = CheckBox2
@@ -280,7 +243,7 @@
             Else head_status = "0"
             End If
 
-        ElseIf goal = 2 Then
+        ElseIf goal = 2 Or goal = 11 Then
             dir = "D:\Macros Settings\head_settings.txt"
             radiobtn_array = head_radiobtn_align
             checkbox_bold_show = CheckBox9
@@ -355,11 +318,21 @@
             setting_main = s
 
         ElseIf goal = 2 Then
-            s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + ComboBox9.Text + "#" + set_color_text_status + "#" + set_color_fill_status
-            settings_head = s
+            If CheckBox4.Checked Then
+                s = font.Text + "#" + size.Text + "#" + text_align + "#" + top_bottom.Text + "#" + left_right.Text + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text + "#" + format_status + "#" + ComboBox9.Text + "#" + set_color_text_status + "#" + set_color_fill_status
+                setting_head = s
+            Else
+                s = setting_head
+            End If
+
+
 
         ElseIf goal = 4 Then
             s = font.Text + "#" + size.Text + "#" + text_align + "#" + bold_status + "#" + italic_status + "#" + underline_status + "#" + color_text.Text + "#" + color_fill.Text
+        ElseIf goal = 10 Then 'если нужно сохранить настройки из стиля для всей таблицы
+            s = setting_main
+        ElseIf goal = 11 Then
+            s = setting_head
         End If
 
         Print(1, s)
@@ -554,6 +527,7 @@
         ElseIf num_setting = 5 Or num_setting = 6 Or num_setting = 7 Then 'жирный, курсив или подчеркнутый
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
         ElseIf num_setting = 13 And goal = 1 Then 'какое выравнивание таблицы стоит?
@@ -564,27 +538,32 @@
         ElseIf num_setting = 11 And goal = 1 Then 'стоит ли галочка на "делать шапку"?
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
 
         ElseIf num_setting = 14 And goal = 1 Then 'стоит ли галочка на "цвет текста" для всей таблицы?
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
         ElseIf num_setting = 15 And goal = 1 Then 'стоит ли галочка на "цвет фона" для всей таблицы?
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
         ElseIf num_setting = 12 And goal = 2 Then 'стоит ли галочка на "цвет текста" для всей таблицы?
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
         ElseIf num_setting = 13 And goal = 2 Then 'стоит ли галочка на "цвет фона" для всей таблицы?
             If split_setting = "1" Then
                 box.Checked = True
+            Else box.checked = False
             End If
 
         ElseIf num_setting = 10 Then
@@ -655,15 +634,15 @@
             otladka += "- файл " + file_dir + " открыт успешною. в функцию вернулась строка '" + s + "' -"
 
         Catch ex As Exception ' действия, если не удалось открыть файл настроек
-            My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style")
-            s = "Arial#8#11#0.05#0.10#0#0#0#0,0,0#255,255,255#0#0#доп.формат#1#1#1"
+            My.Computer.FileSystem.CreateDirectory("D:\Macros Settings\style") ' создаем нужные директории на диске D
+            s = "Arial#8#11#0.10#0.10#0#0#0#0,0,0#255,255,255#0#0#доп.формат#1#1#1"
             setting_main = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
             FileClose(i)
             s = "Arial#8#22#0.10#0.10#1#0#0#0,0,0#255,255,255#0#1#0#0"
-            settings_head = s
+            setting_head = s
             i = FreeFile()
             FileOpen(i, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
             Print(i, s)
@@ -723,8 +702,8 @@
             FileOpen(i, "D:\Macros Settings\style\styles.txt", OpenMode.Output, OpenAccess.Default)
             For y = 0 To 7
                 If y < 7 Then
-                    Print(i, setting_main + "@" + settings_head + Environment.NewLine)
-                Else Print(i, setting_main + "@" + settings_head)
+                    Print(i, setting_main + "@" + setting_head + Environment.NewLine)
+                Else Print(i, setting_main + "@" + setting_head)
                 End If
             Next
 
@@ -1539,26 +1518,42 @@
 
         'формируем новую строку настроек
         Dim s As String
-        s = setting_main + "@" + settings_head
+        s = setting_main + "@" + setting_head
 
         'Замняем нужный элемент на новый (настройки таблицы + разделитель + настройки шапки)
         Select Case sender.name
             Case "Style1"
                 styles(0) = s
+                Name_style1.BackColor = Button10.BackColor
+                Name_style1.ForeColor = Button9.BackColor
             Case "Style2"
                 styles(1) = s
+                Name_style2.BackColor = Button10.BackColor
+                Name_style2.ForeColor = Button9.BackColor
             Case "Style3"
                 styles(2) = s
+                Name_style3.BackColor = Button10.BackColor
+                Name_style3.ForeColor = Button9.BackColor
             Case "Style4"
                 styles(3) = s
+                Name_style4.BackColor = Button10.BackColor
+                Name_style4.ForeColor = Button9.BackColor
             Case "Style5"
                 styles(4) = s
+                Name_style5.BackColor = Button10.BackColor
+                Name_style5.ForeColor = Button9.BackColor
             Case "Style6"
                 styles(5) = s
+                Name_style6.BackColor = Button10.BackColor
+                Name_style6.ForeColor = Button9.BackColor
             Case "Style7"
                 styles(6) = s
+                Name_style7.BackColor = Button10.BackColor
+                Name_style7.ForeColor = Button9.BackColor
             Case Else
                 styles(7) = s
+                Name_style8.BackColor = Button10.BackColor
+                Name_style8.ForeColor = Button9.BackColor
         End Select
 
         'Сохраняем обновленные файл настроек
@@ -1569,20 +1564,118 @@
             Else Print(1, styles(y))
             End If
         Next
-
         FileClose(1)
 
+    End Sub
 
-        debug.Text = sender.name + " Сохранен!"
+    Private Sub apply_style(sender As Object, e As EventArgs) Handles Style_apply1.Click, Style_apply2.Click, Style_apply3.Click, Style_apply4.Click, Style_apply5.Click, Style_apply6.Click, Style_apply7.Click, Style_apply8.Click 'применение стиля
+
+        'Считываем массив стилей
+        Dim styles(8) As String
+        Dim num As Integer
+        num = 0
+        ' Open file.
+        FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Input, OpenAccess.Default)
+        ' Читаем файл до конца и заносим его в массив
+        While Not EOF(1)
+            ' Read line into variable.
+            styles(num) = LineInput(1)
+            num = num + 1
+        End While
+        FileClose(1)
+
+        Select Case sender.name
+            Case "Style_apply1"
+                num = 0
+            Case "Style_apply2"
+                num = 1
+            Case "Style_apply3"
+                num = 2
+            Case "Style_apply4"
+                num = 3
+            Case "Style_apply5"
+                num = 4
+            Case "Style_apply6"
+                num = 5
+            Case "Style_apply7"
+                num = 6
+            Case Else
+                num = 7
+        End Select
+
+        setting_main = styles(num).Split("@")(0).ToString()
+        setting_head = styles(num).Split("@")(1).ToString()
+
+        'Записываем настройки всей таблицы
+        FileOpen(1, "D:\Macros Settings\settings.txt", OpenMode.Output, OpenAccess.Default)
+        Print(1, setting_main)
+        FileClose(1)
+
+        'Записываем настройки шапки
+        FileOpen(1, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
+        Print(1, setting_head)
+        FileClose(1)
+        set_setting_table_complete = False
+        set_setting_head_complete = False
+        'Обновляем внешний вид программы
+        init_table() 'заполняем все поля настроек таблицы актуальными данными
+        init_head() 'заполняем все поля настроек шапки таблицы актуальными данными
+        set_setting_table_complete = True
+        set_setting_head_complete = True
+        Settings_save(10)
+        Settings_save(11)
+
+        test_show(1)
+    End Sub
+
+    Private Sub init_table()
+        Settings_read(0, ComboBox2, 1) ' установка названия шрифта
+        Settings_read(1, ComboBox1, 1) ' установка размера шрифта
+        Settings_read(2, RadioButton5, 1) 'установка выравнивания
+        Settings_read(3, ComboBox4, 1) ' установка отступов верх/низ
+        Settings_read(4, ComboBox3, 1) ' установка отступов лево/право
+        Settings_read(5, CheckBox3, 1) 'жирный
+        Settings_read(6, CheckBox2, 1) 'курсив
+        Settings_read(7, CheckBox1, 1) 'подчеркнутый
+        Settings_read(8, TextBox2, 1) 'установка цвета шрифта
+        Settings_read(9, TextBox3, 1) 'установка цвета фона ячейки
+        Settings_read(10, CheckBox5, 1) 'использовать ж, к, подчеркнутый?
+        Settings_read(11, CheckBox4, 1) 'проверка настроек шапки надо или нет
+        Settings_read(12, CheckBox10, 1) 'проверка настроек ячеек надо или нет
+        Settings_read(14, CheckBox15, 1) 'проверка нужно ли красить текст
+        Settings_read(15, CheckBox16, 1) 'нужно ли красить фон
+        Settings_read(13, ComboBox10, 1) 'как выравнивать саму таблицу (по ширине, по содержимому, зафискисровать, не выравнивать)
+        color_set(Button10, TextBox3.Text, 0) ' красим образец цвета фона 
+        color_set(Button9, TextBox2.Text, 0) ' красим образец цвета текста 
+        color_memory_set(1) 'заносим цвета из памяти на панель для текста
+        color_memory_set(2) 'заносим цвета из памяти на панель для фона
+    End Sub
+
+    Private Sub init_head()
+        Settings_read(0, ComboBox8, 2) ' установка названия шрифта
+        Settings_read(1, ComboBox5, 2) ' установка размера шрифта
+        Settings_read(2, Head_RadioButton5, 2) 'установка выравнивания
+        Settings_read(3, ComboBox7, 2) ' установка отступов верх/низ
+        Settings_read(4, ComboBox6, 2) ' установка отступов лево/право
+        Settings_read(5, CheckBox9, 2) 'жирный
+        Settings_read(6, CheckBox8, 2) 'курсив
+        Settings_read(7, CheckBox7, 2) 'подчеркнутый
+        Settings_read(8, TextBox5, 2) 'установка цвета шрифта
+        Settings_read(9, TextBox4, 2) 'установка цвета фона ячейки
+        Settings_read(11, ComboBox9, 2) 'количество строк шапки
+        color_set(Button14, TextBox5.Text, 0) ' красим образец цвета текста
+        color_set(Button12, TextBox4.Text, 0) ' красим образец цвета фона 
+        color_memory_set(3) 'установка цветов цвета в память для текста
+        color_memory_set(4) 'установка цветов в память для фона
+        Settings_read(12, CheckBox17, 2) 'проверка нужно ли красить текст
+        Settings_read(13, CheckBox18, 2) 'нужно ли красить фон
     End Sub
 
     Private Sub save_name_style(sender As Object, e As EventArgs) Handles Name_style1.TextChanged, Name_style2.TextChanged, Name_style3.TextChanged, Name_style4.TextChanged, Name_style5.TextChanged, Name_style6.TextChanged, Name_style7.TextChanged, Name_style8.TextChanged
         'сохраниение имени стиля при его измнении
-
         FileOpen(1, "D:\Macros Settings\style\style_name.txt", OpenMode.Output, OpenAccess.Default)
         Print(1, Name_style1.Text + Environment.NewLine + Name_style2.Text + Environment.NewLine + Name_style3.Text + Environment.NewLine + Name_style4.Text + Environment.NewLine + Name_style5.Text + Environment.NewLine + Name_style6.Text + Environment.NewLine + Name_style7.Text + Environment.NewLine + Name_style8.Text)
         FileClose(1)
-        debug.Text = sender.name + " " + sender.text
     End Sub
 
 
@@ -1662,7 +1755,6 @@
             Panel5.Visible = True
             Panel5.Location = New Point(3, 212)
         ElseIf view_id = 4 Then 'Показывать настройки для таблицы, шапки таблицы и окно для отдельных ячеек
-
             set_window_size(715, windows_width) ' устанавливает размер всего окна программы
             set_controlTab_size(675) 'устанавливает размер окна с вкладками
             set_label_head_position(10, 205) 'устанавливает надпись "формат. шапки"
@@ -1678,15 +1770,33 @@
     End Sub
 
 
+    Private Sub settings_string_read(name_setting As String)
+        Dim dir As String
+        If name_setting = "table" Then
+            dir = "D:\Macros Settings\settings.txt"
+            FileOpen(1, dir, OpenMode.Input, OpenAccess.Default)
+            While Not EOF(1)
+                setting_main = LineInput(1)
+            End While
+            FileClose(1)
+        ElseIf name_setting = "head" Then
+            dir = "D:\Macros Settings\head_settings.txt"
+            FileOpen(1, dir, OpenMode.Input, OpenAccess.Default)
+            While Not EOF(1)
+                setting_head = LineInput(1)
+            End While
+            FileClose(1)
+        End If
+
+    End Sub
+
+
 
     Private Sub set_window_size(heigt, width)
         Me.Height = heigt
         Me.Width = width
     End Sub
 
-    Private Sub ComboBox17_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub set_controlTab_size(heigt)
         TabControl1.Height = heigt
