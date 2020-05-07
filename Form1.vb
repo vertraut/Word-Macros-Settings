@@ -1653,7 +1653,6 @@
 
 
     Private Sub apply_style(sender As Object, e As EventArgs) Handles Style_apply1.Click, Style_apply2.Click, Style_apply3.Click, Style_apply4.Click, Style_apply5.Click, Style_apply6.Click, Style_apply7.Click, Style_apply8.Click 'применение стиля
-
         'Считываем массив стилей
         Dim styles(8) As String
         Dim num As Integer
@@ -1699,6 +1698,14 @@
         FileOpen(1, "D:\Macros Settings\head_settings.txt", OpenMode.Output, OpenAccess.Default)
         Print(1, setting_head)
         FileClose(1)
+        'если активная вкладка "настройки таблицы, то обновляем настройки согласно стилю
+        If TabControl1.SelectedIndex = 0 Then
+            upload_style()
+        End If
+
+    End Sub
+
+    Private Sub upload_style()
         set_setting_table_complete = False
         set_setting_head_complete = False
         'Обновляем внешний вид программы
@@ -1937,6 +1944,7 @@
         Panel8.Visible = True
         Button64.Visible = False
         TabControl1.SelectedTab = TabPage1
+        upload_style()
         Button65.Visible = False
         Me.MinimizeBox = True
     End Sub

@@ -413,6 +413,7 @@ Partial Class Form1
         Me.GroupBox10.Size = New System.Drawing.Size(234, 188)
         Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Visible = False
         '
         'Button68
         '
