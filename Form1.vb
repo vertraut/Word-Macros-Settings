@@ -67,6 +67,7 @@
         End If
 
         If TabControl1.SelectedIndex = 1 Then 'Если выбрана пипетка
+            Button67.BackColor = Color.LightGreen
             GroupBox10.Location = New Point(10, 5)
             GroupBox10.Visible = True
             TabControl1.Visible = False
@@ -123,6 +124,8 @@
             Me.Width = 195
             Button65.Visible = True
             Me.MinimizeBox = False
+            Button65.BackColor = Color.LightGreen
+
         End If
 
     End Sub
@@ -1830,6 +1833,7 @@
         TabControl1.SelectedTab = TabPage1
         Me.MinimizeBox = True
         GroupBox10.Visible = False
+        Me.TopMost = False
     End Sub
 
     Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click, Button67.Click
@@ -1947,6 +1951,8 @@
         upload_style()
         Button65.Visible = False
         Me.MinimizeBox = True
+        Me.TopMost = False
+
     End Sub
 
 End Class
