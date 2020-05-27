@@ -2966,7 +2966,7 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Location = New System.Drawing.Point(1096, 235)
+        Me.Panel3.Location = New System.Drawing.Point(1155, 253)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(249, 207)
         Me.Panel3.TabIndex = 4
@@ -3522,6 +3522,7 @@ Partial Class Form1
         'Button102
         '
         Me.Button102.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button102.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.pipetka_btn
         Me.Button102.Location = New System.Drawing.Point(193, 91)
         Me.Button102.Name = "Button102"
         Me.Button102.Size = New System.Drawing.Size(35, 31)
@@ -3532,6 +3533,7 @@ Partial Class Form1
         'Button103
         '
         Me.Button103.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button103.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.pipetka_btn
         Me.Button103.Location = New System.Drawing.Point(193, 21)
         Me.Button103.Name = "Button103"
         Me.Button103.Size = New System.Drawing.Size(35, 31)
@@ -3922,7 +3924,6 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.ClientSize = New System.Drawing.Size(1462, 684)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label19)
@@ -3939,6 +3940,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button54)
         Me.Controls.Add(Me.color_text_pipetka_memory_1)
         Me.Controls.Add(Me.tb_t_1)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

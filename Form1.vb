@@ -413,13 +413,11 @@
 
 
     Private Sub Button_color_Press_up(sender As Object, e As EventArgs) Handles Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button82.MouseUp, Button81.MouseUp, Button103.MouseUp, Button102.MouseUp
-
         set_color_getpixel()
         Timer1.Enabled = False
         Panel3.Visible = False
         sender.cursor = Cursors.Hand
         sender.Image = My.Resources.pipetka_btn
-
     End Sub
 
 
@@ -1581,9 +1579,6 @@
         'num_style - 1 потому что номера идут с 1, а массив с 0, поэтому отнимаем 1
         styles(num_style - 1) = s
 
-
-
-
         'Сохраняем обновленные файл настроек
         FileOpen(1, "D:\Macros Settings\style\styles.txt", OpenMode.Output, OpenAccess.Default)
         For y = 0 To 7
@@ -1824,9 +1819,6 @@
 
     End Sub
 
-    Private Sub Button_color_Press_down(sender As Object, e As MouseEventArgs) Handles Button82.MouseDown, Button81.MouseDown, Button6.MouseDown, Button4.MouseDown, Button34.MouseDown, Button33.MouseDown, Button103.MouseDown, Button102.MouseDown
-
-    End Sub
 
     Private Sub Button68_Click(sender As Object, e As EventArgs) Handles Button68.Click
         TabControl1.Visible = True
@@ -1846,9 +1838,6 @@
         End If
     End Sub
 
-    Private Sub Button_color_Press_up(sender As Object, e As MouseEventArgs) Handles Button82.MouseUp, Button81.MouseUp, Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button103.MouseUp, Button102.MouseUp
-
-    End Sub
 
     Private Sub Window_view(view_id As Int16) 'Функция показывающая или скрывающая доп. опции для таблиц
         Window_view_memory = view_id
