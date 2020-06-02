@@ -1051,16 +1051,19 @@
     End Sub
 
     Public Sub pipetka_Apply(goal)
-        Try
-            AppActivate(Process.GetProcessesByName("WINWORD")(0).MainWindowTitle)
-            If goal = 7 Then
-                SendKeys.Send("{F5}")
-            Else SendKeys.Send("{F6}")
-            End If
-        Catch ex As Exception
+        If CheckBox22.Checked = True Then
+            Try
+                AppActivate(Process.GetProcessesByName("WINWORD")(0).MainWindowTitle)
+                If goal = 7 Then
+                    SendKeys.Send("{F5}")
+                Else SendKeys.Send("{F6}")
+                End If
+            Catch ex As Exception
 
-            MsgBox("Для использования пипетки, необходимо открыть WORD файл")
-        End Try
+                MsgBox("Для использования пипетки, необходимо открыть WORD файл")
+            End Try
+        End If
+
 
     End Sub
 
@@ -1855,6 +1858,15 @@
         End If
 
     End Sub
+
+    Private Sub Button_color_Press_down(sender As Object, e As MouseEventArgs) Handles Button82.MouseDown, Button81.MouseDown, Button6.MouseDown, Button4.MouseDown, Button34.MouseDown, Button33.MouseDown, Button103.MouseDown, Button102.MouseDown
+
+    End Sub
+
+    Private Sub Button_color_Press_up(sender As Object, e As MouseEventArgs) Handles Button82.MouseUp, Button81.MouseUp, Button6.MouseUp, Button4.MouseUp, Button34.MouseUp, Button33.MouseUp, Button103.MouseUp, Button102.MouseUp
+
+    End Sub
+
 
 
     Private Sub Button68_Click(sender As Object, e As EventArgs) Handles Button68.Click

@@ -27,6 +27,7 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
         Me.Button68 = New System.Windows.Forms.Button()
         Me.Button67 = New System.Windows.Forms.Button()
         Me.Button30 = New System.Windows.Forms.Button()
@@ -382,6 +383,7 @@ Partial Class Form1
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.CheckBox22)
         Me.GroupBox10.Controls.Add(Me.Button68)
         Me.GroupBox10.Controls.Add(Me.Button67)
         Me.GroupBox10.Controls.Add(Me.Button30)
@@ -414,6 +416,18 @@ Partial Class Form1
         Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Visible = False
+        '
+        'CheckBox22
+        '
+        Me.CheckBox22.AutoSize = True
+        Me.CheckBox22.Checked = True
+        Me.CheckBox22.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox22.Location = New System.Drawing.Point(99, 23)
+        Me.CheckBox22.Name = "CheckBox22"
+        Me.CheckBox22.Size = New System.Drawing.Size(99, 20)
+        Me.CheckBox22.TabIndex = 75
+        Me.CheckBox22.Text = "Применять?"
+        Me.CheckBox22.UseVisualStyleBackColor = True
         '
         'Button68
         '
@@ -4319,4 +4333,5 @@ Partial Class Form1
     Friend WithEvents Button65 As Button
     Friend WithEvents Button68 As Button
     Friend WithEvents Button67 As Button
+    Friend WithEvents CheckBox22 As CheckBox
 End Class
