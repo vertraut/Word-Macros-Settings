@@ -67,16 +67,17 @@
         End If
 
         If TabControl1.SelectedIndex = 1 Then 'Если выбрана пипетка
+
             Button67.BackColor = Color.LightGreen
-            GroupBox10.Location = New Point(10, 5)
+            GroupBox10.Location = New Point(2, 0)
             GroupBox10.Visible = True
             TabControl1.Visible = False
             Me.MinimizeBox = False
             Me.TopMost = True
             Label19.Visible = False
             Button3.Visible = False
-            Me.Height = 249
-            Me.Width = 300
+            Me.Height = 230
+            Me.Width = 260
             set_controlTab_size(210) 'устанавливает размер окна с вкладками
             color_set(Button62, TextBox9.Text, 0) ' красим образец цвета фона 
             color_set(Button30, TextBox8.Text, 0) ' красим образец цвета текста 
@@ -382,25 +383,27 @@
         Dim Ico As Icon = Icon.FromHandle(BM.GetHicon)
         sender.cursor = New Cursor(Ico.Handle)
         sender.Image = Nothing
-
+        pipetkaSetSize(1) 'размер окна пипетки по умолчанию (всплывающее окошко при использовании пипетки)
         If sender.name = Button6.Name Then
-            call_pixcolor = Button6
+            call_pixcolor = Button6 'текст всей таблицы
             Panel3.Location = New Point(343, 28)
         ElseIf sender.name = Button4.Name Then
-            call_pixcolor = Button4
+            call_pixcolor = Button4 'ячейки всей таблицы
             Panel3.Location = New Point(343, 28)
         ElseIf sender.name = Button34.Name Then
-            call_pixcolor = Button34
+            call_pixcolor = Button34 'текст шапки таблицы
             Panel3.Location = New Point(343, 245)
         ElseIf sender.name = Button33.Name Then
-            call_pixcolor = Button33
+            call_pixcolor = Button33 'цвет фона шапки таблицы
             Panel3.Location = New Point(343, 245)
         ElseIf sender.name = Button82.Name Then
-            call_pixcolor = Button82
-            Panel3.Location = New Point(20, 1)
+            call_pixcolor = Button82 'пипетка текст
+            pipetkaSetSize(2)
+            Panel3.Location = New Point(5, 2)
         ElseIf sender.name = Button81.Name Then
-            call_pixcolor = Button81
-            Panel3.Location = New Point(20, 1)
+            pipetkaSetSize(2)
+            call_pixcolor = Button81 'пипетка фон
+            Panel3.Location = New Point(5, 2)
         ElseIf sender.name = Button103.Name Then
             call_pixcolor = Button103
             Panel3.Location = New Point(255, 1)
@@ -409,6 +412,16 @@
             Panel3.Location = New Point(255, 1)
         End If
         Timer1.Enabled = True
+    End Sub
+
+    Public Sub pipetkaSetSize(i)
+        If i = 1 Then
+            Panel3.Height = 206
+            Panel3.Width = 234
+        Else
+            Panel3.Height = 187
+            Panel3.Width = 234
+        End If
     End Sub
 
 
@@ -924,10 +937,12 @@
             TextBox9.Text = R + "," + G + "," + B
             Button62.BackColor = color
             upd_and_save_mem(goal)
+
         ElseIf goal = 8 Then 'цвет фона пипетка
             TextBox8.Text = R + "," + G + "," + B
             Button30.BackColor = color
             upd_and_save_mem(goal)
+
         ElseIf goal = 9 Then 'цвет текста текстовый блок
             TextBox11.Text = R + "," + G + "," + B
             Button84.BackColor = color
@@ -1027,6 +1042,26 @@
         Next i
         Print(file_num, s)
         FileClose(file_num)
+
+
+        If goal = 7 Or goal = 8 Then
+            pipetka_Apply(goal) 'идем в водр и применяем цвет для текста или фона
+        End If
+
+    End Sub
+
+    Public Sub pipetka_Apply(goal)
+        Try
+            AppActivate(Process.GetProcessesByName("WINWORD")(0).MainWindowTitle)
+            If goal = 7 Then
+                SendKeys.Send("{F5}")
+            Else SendKeys.Send("{F6}")
+            End If
+        Catch ex As Exception
+
+            MsgBox("Для использования пипетки, необходимо открыть WORD файл")
+        End Try
+
     End Sub
 
     Function control_imput_color_rgb(goal As Integer) As Boolean ' Функция проверки правильности ввода в текстовое поле кода цвета
@@ -1150,6 +1185,8 @@
 
     Private Sub Color_text_pipetka_memory_1_Click(sender As Object, e As EventArgs) Handles color_text_pipetka_memory_1.Click, color_text_pipetka_memory_2.Click, color_text_pipetka_memory_3.Click, color_text_pipetka_memory_4.Click, color_text_pipetka_memory_5.Click, color_text_pipetka_memory_6.Click, color_text_pipetka_memory_7.Click, color_text_pipetka_memory_8.Click
         choose_from_memory(7, sender.BackColor)
+
+
     End Sub
 
     Private Sub Color_bg_pipetka_memory_1_Click(sender As Object, e As EventArgs) Handles color_bg_pipetka_memory_1.Click, color_bg_pipetka_memory_2.Click, color_bg_pipetka_memory_3.Click, color_bg_pipetka_memory_4.Click, color_bg_pipetka_memory_5.Click, color_bg_pipetka_memory_6.Click, color_bg_pipetka_memory_7.Click, color_bg_pipetka_memory_8.Click

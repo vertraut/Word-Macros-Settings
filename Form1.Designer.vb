@@ -456,7 +456,7 @@ Partial Class Form1
         Me.Button62.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button62.Location = New System.Drawing.Point(6, 59)
         Me.Button62.Name = "Button62"
-        Me.Button62.Size = New System.Drawing.Size(37, 48)
+        Me.Button62.Size = New System.Drawing.Size(37, 49)
         Me.Button62.TabIndex = 73
         Me.Button62.TabStop = False
         Me.Button62.UseVisualStyleBackColor = True
@@ -465,6 +465,7 @@ Partial Class Form1
         '
         Me.Button31.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button31.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button31.ForeColor = System.Drawing.Color.Green
         Me.Button31.Location = New System.Drawing.Point(150, 121)
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(35, 31)
@@ -477,6 +478,7 @@ Partial Class Form1
         '
         Me.Button63.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button63.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button63.ForeColor = System.Drawing.Color.Green
         Me.Button63.Location = New System.Drawing.Point(150, 51)
         Me.Button63.Name = "Button63"
         Me.Button63.Size = New System.Drawing.Size(35, 31)
@@ -652,7 +654,6 @@ Partial Class Form1
         Me.color_text_pipetka_memory_8.Size = New System.Drawing.Size(20, 20)
         Me.color_text_pipetka_memory_8.TabIndex = 33
         Me.color_text_pipetka_memory_8.UseVisualStyleBackColor = False
-        Me.color_text_pipetka_memory_8.Visible = False
         '
         'Button81
         '
@@ -2966,17 +2967,17 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Location = New System.Drawing.Point(1155, 253)
+        Me.Panel3.Location = New System.Drawing.Point(1142, 256)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(249, 207)
+        Me.Panel3.Size = New System.Drawing.Size(234, 188)
         Me.Panel3.TabIndex = 4
         Me.Panel3.Visible = False
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(63, 170)
+        Me.TextBox1.Location = New System.Drawing.Point(3, 153)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(83, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(223, 22)
         Me.TextBox1.TabIndex = 75
         Me.TextBox1.TabStop = False
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -2985,9 +2986,9 @@ Partial Class Form1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Cross
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(149, 136)
+        Me.Button1.Location = New System.Drawing.Point(154, 63)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(59, 56)
+        Me.Button1.Size = New System.Drawing.Size(72, 70)
         Me.Button1.TabIndex = 76
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -2996,7 +2997,7 @@ Partial Class Form1
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Image = Global.Macros_Settings_vertraut.My.Resources.Resources.aim
-        Me.PictureBox1.Location = New System.Drawing.Point(63, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(145, 130)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
