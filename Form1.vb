@@ -34,6 +34,14 @@
 
     End Sub
 
+    Private Sub Form1_lostFocus(sender As Object, e As EventArgs) Handles Me.LostFocus 'если форма теряет фокус
+        Me.Opacity = 1
+    End Sub
+
+    Private Sub Form1_GetFocus(sender As Object, e As EventArgs) Handles Me.GotFocus 'если форма получает фокус
+        Me.Opacity = 1
+    End Sub
+
     Public Sub start_program()
 
         mem_color_text = New Button(7) {Me.color_text_memory_1, Me.color_text_memory_2, Me.color_text_memory_3, Me.color_text_memory_4, Me.color_text_memory_5, Me.color_text_memory_6, Me.color_text_memory_7, Me.color_text_memory_8}
